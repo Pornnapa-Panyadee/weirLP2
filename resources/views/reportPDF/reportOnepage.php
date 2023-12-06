@@ -182,10 +182,10 @@
                 } 
                 }
                 function check_score($s){
-                    if($s==1){ $text=['https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/check.png','https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png'];}
-                    elseif($s==2){ $text=['https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/check.png','https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png'] ;}
-                    elseif($s==3){ $text=['https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/check.png'] ;}
-                    else{ $text=['https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/jang_basin/images/logo/square.png'] ; }
+                    if($s==1){ $text=['https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/check.png','https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png'];}
+                    elseif($s==2){ $text=['https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/check.png','https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png'] ;}
+                    elseif($s==3){ $text=['https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/check.png'] ;}
+                    else{ $text=['https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png','https://watercenter.scmc.cmu.ac.th/weir/lampang/images/logo/square.png'] ; }
                     return $text;
                 }
                 function checkpixhas($text,$t,$s) {

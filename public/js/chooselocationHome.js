@@ -1,6 +1,6 @@
 //console.log('hello');
 
-var ID = window.location.href.replace("https://watercenter.scmc.cmu.ac.th/weir/jang_basin/", "");
+var ID = window.location.href.replace("https://watercenter.scmc.cmu.ac.th/weir/lampang/", "");
 
 function Province(id, district) {
   // Empty the dropdown
@@ -10,7 +10,7 @@ function Province(id, district) {
   // AJAX request 
   $.ajax({
 
-    url: 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/district/' + id,
+    url: 'https://watercenter.scmc.cmu.ac.th/weir/lampang/district/' + id,
 
     type: 'get',
     dataType: 'json',
@@ -51,7 +51,7 @@ function District(id, tumbol) {
   // AJAX request 
   $.ajax({
 
-    url: 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/tumbol/' + id,
+    url: 'https://watercenter.scmc.cmu.ac.th/weir/lampang/tumbol/' + id,
     type: 'get',
     dataType: 'json',
     success: function (response) {
@@ -91,7 +91,7 @@ function Tumbol(id, vill) {
   // AJAX request 
   $.ajax({
 
-    url: 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/village/' + id,
+    url: 'https://watercenter.scmc.cmu.ac.th/weir/lampang/village/' + id,
     type: 'get',
     dataType: 'json',
     success: function (response) {
@@ -180,7 +180,7 @@ function District(id, tumbol) {
   // AJAX request 
   $.ajax({
 
-    url: 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/tumbol/' + id,
+    url: 'https://watercenter.scmc.cmu.ac.th/weir/lampang/tumbol/' + id,
     type: 'get',
     dataType: 'json',
     success: function (response) {

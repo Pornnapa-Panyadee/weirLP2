@@ -1,5 +1,5 @@
 // https://watercenter.scmc.cmu.ac.th/weir/jang_basin/location/getTumbol/เมืองลำปาง
-var ID = window.location.href.replace("https://watercenter.scmc.cmu.ac.th/weir/jang_basin/", "");
+var ID = window.location.href.replace("https://watercenter.scmc.cmu.ac.th/weir/lampang/", "");
 function Province(id, district) {
 
   $('#weir_district').find('option').not(':first').remove();
@@ -46,7 +46,7 @@ function District(id, tumbol) {
   // AJAX request 
   // console.log(id)
   $.ajax({
-    url: 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/location/getTumbol/' + id,
+    url: 'https://watercenter.scmc.cmu.ac.th/weir/lampang/location/getTumbol/' + id,
     type: 'get',
     dataType: 'json',
     success: function (response) {
@@ -85,7 +85,7 @@ function Tumbol(dis, id, vill) {
 
   // AJAX request 
   $.ajax({
-    url: 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/location/getVillage/' + dis + "/" + id,
+    url: 'https://watercenter.scmc.cmu.ac.th/weir/lampang/location/getVillage/' + dis + "/" + id,
     // url: 'getVillage/' + dis+"/"+ id,
     type: 'get',
     dataType: 'json',

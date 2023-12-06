@@ -233,7 +233,7 @@
                                             $level2=["less","mid","more"];
                                             function checkphoto($text){
                                               if($text!=NULL){
-                                                  $img='https://watercenter.scmc.cmu.ac.th/weir/jang_basin/'.$text;
+                                                  $img='https://watercenter.scmc.cmu.ac.th/weir/lampang/'.$text;
                                                   echo "<img src='{$img}'  width=200px; style='margin-left:10px;'>";
                                               }else{ echo "";}	
                                             }
