@@ -209,10 +209,12 @@
                                       <h5 class="card-title">
                                           <select id='weir_district' name='amp' id="name">
                                                 <option value="sum">- - เลือกอำเภอ - -</option>
-                                                <option value="เมืองลำปาง">เมืองลำปาง</option>
+                                                <option value="ห้างฉัตร">ห้างฉัตร</option>
                                                 <option value="เกาะคา">เกาะคา</option>
-                                                <option value="แม่ทะ">แม่ทะ</option>
-                                                <option value="แม่เมาะ">แม่เมาะ</option>
+                                                <option value="สบปราบ">สบปราบ</option>
+                                                <option value="เถิน">เถิน</option>
+                                                <option value="แจ้ห่ม">แจ้ห่ม</option>
+                                                <option value="งาว">งาว</option>
                                                                                              
                                           </select> 
                                       </h5>
@@ -339,6 +341,8 @@
       var station2 = new L.LayerGroup();
       var station3 = new L.LayerGroup();
       var station4 = new L.LayerGroup();
+      var station5 = new L.LayerGroup();
+      var station6 = new L.LayerGroup();
 
       var rid = new L.LayerGroup();
       var ridNo = new L.LayerGroup();
@@ -354,12 +358,12 @@
           osmBw = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
                 maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
       var map = L.map('map', {
-          layers: [osm,station1,station2,station3,station4,borders],
+          layers: [osm,station1,station2,station3,station4,station5,station6,borders],
           center: [x,y],
-          zoom: 10,
+          zoom: 8,
         });
       
-      var runLayer = omnivore.kml('{{ asset('kml/bound_ขอบเขตลุ่มน้ำแม่จาง.kml') }}')
+      var runLayer = omnivore.kml('{{ asset('kml/bound_amphoe_lampang.kml') }}')
 						.on('ready', function() {
 						this.setStyle({
             fillOpacity: 0,
@@ -384,7 +388,7 @@
           popupAnchor: [0, 0]
         });
            
-     var amp=["เมืองลำปาง", "เกาะคา", "แม่ทะ","แม่เมาะ"];    
+     var amp=["ห้างฉัตร", "เกาะคา", "สบปราบ","เถิน","แจ้ห่ม","งาว"];    
       
       
       function addPin(ampName,i,mo){
@@ -425,6 +429,8 @@
       addPin(station2,1,mo);
       addPin(station3,2,mo);
       addPin(station4,3,mo);
+      addPin(station5,4,mo);
+      addPin(station6,5,mo);
 
       var baseTree = {
           label: 'BaseLayers',
@@ -447,6 +453,8 @@
                 { label:" "+amp[1],layer: station2},
                 { label:" "+amp[2],layer: station3},
                 { label:" "+amp[3],layer: station4},
+                { label:" "+amp[4],layer: station5},
+                { label:" "+amp[5],layer: station6},
           ]
         }];
         

@@ -309,7 +309,7 @@ class MapScoreController extends Controller
     // Page Map Score for table
     public function scoretable()
     {
-        $amp = ["เมืองลำปาง", "เกาะคา", "แม่ทะ", "แม่เมาะ"];
+        $amp = ["ห้างฉัตร", "เกาะคา", "สบปราบ","เถิน","แจ้ห่ม","งาว"]; 
         
 
         for ($i = 0; $i < count($amp); $i++) {
@@ -363,7 +363,7 @@ class MapScoreController extends Controller
 
     public function sedimentscore()
     {
-        $amp = ["เมืองลำปาง", "เกาะคา", "แม่ทะ", "แม่เมาะ"];
+        $amp = ["ห้างฉัตร", "เกาะคา", "สบปราบ","เถิน","แจ้ห่ม","งาว"]; 
 
         for ($i = 0; $i < count($amp); $i++) {
             $score_Y = DB::table('upconcrete_invs')

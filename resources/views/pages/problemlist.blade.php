@@ -75,10 +75,12 @@
                                                                                         <td>
                                                                                             <select id='weir_district' name='amp' class="form-control" id="name">
                                                                                                 <option value="sum">- - กรุณาเลือกอำเภอ - -</option>
-                                                                                                <option value="เมืองลำปาง">เมืองลำปาง</option>
+                                                                                                <option value="ห้างฉัตร">ห้างฉัตร</option>
                                                                                                 <option value="เกาะคา">เกาะคา</option>
-                                                                                                <option value="แม่ทะ">แม่ทะ</option>
-                                                                                                <option value="แม่เมาะ">แม่เมาะ</option>  
+                                                                                                <option value="สบปราบ">สบปราบ</option>
+                                                                                                <option value="เถิน">เถิน</option>
+                                                                                                <option value="แจ้ห่ม">แจ้ห่ม</option>
+                                                                                                <option value="งาว">งาว</option>  
                                                                                             </select> 
                                                                                             <span class="messages"></span>
                                                                                         </td>
