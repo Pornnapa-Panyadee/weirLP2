@@ -797,7 +797,7 @@ class FormsController extends Controller
               'gate_damage'=>$request->gate_6_damage,
               'gate_remake'=>json_encode($gate_6_remake, JSON_UNESCAPED_UNICODE),
 
-              'section_status'=>$request->water_system,
+              'section_status'=>$request->Water_system,
               
             ]
           );
@@ -1034,7 +1034,8 @@ class FormsController extends Controller
                     $loc5->save();
                 }
               }
-            //6 **************** check if image water System **********************//
+
+            //6 **************** check if image Downstream Protection **********************//
               if ($request->hasFile('water_system')) {
                 $images = $request->file('water_system');
                 $org_img = $thm_img = true;
@@ -1073,6 +1074,8 @@ class FormsController extends Controller
                     $loc6->save();
                 }
               }
+
+           
 
               $user=$name;
               $location = WeirLocation::select('*')->get();
@@ -1137,7 +1140,7 @@ class FormsController extends Controller
     }
 
     public function formUpdate(Request $request, User $user){
-      //dd($request);
+      // dd($request);
       $name=Auth::user()->name ;
       function addNULL($text) {
         if($text==true){return 1;}
@@ -1466,7 +1469,7 @@ class FormsController extends Controller
           'section_status'=>$request->Upstream_Concrete,
         ]
       );
-      // dd($sidewall_3_remake);
+      
       ///////----3----control_invs-------------/////////
       $control=ControlInv::where('weir_id',$request->weir_id)->update(
         [
@@ -2077,8 +2080,6 @@ class FormsController extends Controller
                     $last=explode("-",$photo_last->photo_id);
                     $photo_id=$codeweir."-".calCodePH($photo,(int)$last[1]);
                   }
-                  
-
                   $filename = $photo_id.'.'.$image->getClientOriginalExtension();
                   //path of image for upload
                   $org_path = 'images/originals/' . $filename;

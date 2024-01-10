@@ -2503,9 +2503,9 @@
                                                         <tr> 
                                                             <th colspan="13" id="text1">
                                                               6. ระบบส่งน้ำ
-                                                              <div class="checkbox-color checkbox-primary"><input type="checkbox" id="6_checkbox_1" name="water_system" value="1"><label for="6_checkbox_1">  </label> ใช้งานได้</div>
-                                                              <div class="checkbox-color checkbox-primary"><input type="checkbox" id="6_checkbox_2" name="water_system" value="2"><label for="6_checkbox_2">  </label> ควรปรับปรุง</div>
-                                                              <div class="checkbox-color checkbox-primary"><input type="checkbox" id="6_checkbox_3" name="water_system" value="3"><label for="6_checkbox_3">  </label> ควรรื้อถอนก่อสร้างใหม่</div>  
+                                                              <div class="checkbox-color checkbox-primary"><input type="checkbox" id="6_checkbox_1" name="Water_system" value="1"><label for="6_checkbox_1">  </label> ใช้งานได้</div>
+                                                              <div class="checkbox-color checkbox-primary"><input type="checkbox" id="6_checkbox_2" name="Water_system" value="2"><label for="6_checkbox_2">  </label> ควรปรับปรุง</div>
+                                                              <div class="checkbox-color checkbox-primary"><input type="checkbox" id="6_checkbox_3" name="Water_system" value="3"><label for="6_checkbox_3">  </label> ควรรื้อถอนก่อสร้างใหม่</div>  
                                                             </th>
                                                         </tr>
                                                         <!-- 6.1 -->
