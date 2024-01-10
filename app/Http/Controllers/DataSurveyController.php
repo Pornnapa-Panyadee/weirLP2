@@ -81,7 +81,7 @@ class DataSurveyController extends Controller
                 ];
             
             
-            if($weir[0]->user==$user || $status=="admin" || $user=="raveewach"|| $user=="natthaphon" || $user=="admin"|| $user=="Admin"){
+            if($weir[0]->user==$user || $status=="admin" || $user=="Raveewach Jatiket"|| $user=="natthaphon" || $user=="admin"|| $user=="Admin"){
                 $dataUser[] = [
                     'weir_id'=> $weir[0]->weir_id,
                     'weir_code'=> $weir[0]->weir_code,
