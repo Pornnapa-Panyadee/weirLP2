@@ -120,7 +120,7 @@
                         <div class="col-md-12">
                           <div class="card table-card">
                             <div class="card-header">
-                              <h3>แผนที่แสดงตำแหน่งฝายจำแนกตามสภาพฝาย ในพื้นที่ลุ่มน้ำแม่จาง จังหวัดลำปาง</h3>                              
+                              <h3>แผนที่แสดงตำแหน่งฝายจำแนกตามสภาพฝาย ในพื้นที่จังหวัดลำปาง</h3>                              
                               
                               <!-- Map Show -->
                               <div class="card-block p-b-0">
@@ -145,7 +145,7 @@
                                 <div class="card-block">
                                   <div class="row">
                                     <div class="col-lg-9 col-xl-12">
-                                      <div class="sub-title"> <h4> ตารางสรุปผลจำนวนฝายจำแนกตามสภาพฝาย ในพื้นที่ลุ่มน้ำแม่จาง จังหวัดลำปาง </h4> </div>
+                                      <div class="sub-title"> <h4> ตารางสรุปผลจำนวนฝายจำแนกตามสภาพฝาย ในพื้นที่จังหวัดลำปาง </h4> </div>
                                     </div> 
                                   </div>
                                   <div id="tableData">

@@ -157,10 +157,10 @@
                     <td colspan="3" height=200px; class="customers"> <font style="font-size:60px;"><b><?php echo $text_tm ?> <br> <?php echo $text_amp ?> จังหวัดลำปาง</b></td>
                 </tr>
                 <tr>
-                    <td colspan="3" height=200px; class="customers"> <font style="font-size:28px;"><b>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝาย<br>และวางแผนปรับปรุงเพิ่มประสิทธิภาพฝาย <br> ในพื้นที่ลุ่มน้ำแม่จาง จังหวัดลำปาง<b></td>
+                    <td colspan="3" height=200px; class="customers"> <font style="font-size:28px;"><b>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝาย<br>และการบริหารจัดการพื้นที่เสี่ยงภัยแล้งและน้ำท่วมในจังหวัดลำปาง<b></td>
                 </tr>
                 <tr>
-                    <td colspan="3" > <font style="font-size:22px;"><b>โดยการไฟฟ้าฝ่ายผลิตแห่งประเทศไทย (กฟผ) แม่เมาะ ร่วมกับมหาวิทยาลัยเชียงใหม่<b></td>
+                    <td colspan="3" > <font style="font-size:22px;"><b>โดย องค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่<b></td>
                 </tr>
             </table>
 
@@ -215,7 +215,7 @@
                             <img src='images/footer/egat.jpg' width="50px"> 
                         </td>
                         <td width="70%">
-                            <div class="texthead"> <b>การตรวจสภาพฝายและแนวทางแก้ไขปรับปรุงเพื่อเพิ่มประสิทธิภาพฝาย ในพื้นที่ลุ่มน้ำแม่จาง จังหวัดลำปาง </b></div>
+                            <div class="texthead"> <b>การตรวจสภาพฝายและแนวทางแก้ไขปรับปรุงเพื่อเพิ่มประสิทธิภาพฝาย ในจังหวัดลำปาง </b></div>
                         </td>
                         <td width="15%" align="left">
                             <img src='images/footer/cmu.png' width="30px"></td>

@@ -126,7 +126,7 @@
                           <div class="card table-card">
                             <div class="card-header">
                               <h5>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝายและการบริหารจัดการพื้นที่เสี่ยงภัยแล้งและน้ำท่วมในจังหวัดลำปาง</h5>
-                              <br>โดยองค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่
+                              <br>โดย องค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่
                               <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                   <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
@@ -201,7 +201,7 @@
                             <div class="col-lg-12 col-xl-12">
                               <div class="sub-title"><h4>ตารางแสดงรายละเอียดการตรวจสอบฝาย</h4> </div>
                               <!-- choose Amp -->
-                                <form id="amp" name="amp" action="/weir/jang_basin/#tableData" method="get"> 
+                                <form id="amp" name="amp" action="/weir/lampang/#tableData" method="get"> 
                                 <div class="find">
                                   <div class="row justify-content-center" >
                                     <div class="col-md-8 col-xl-6"></div>
