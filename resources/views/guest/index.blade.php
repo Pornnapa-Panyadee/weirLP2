@@ -126,7 +126,7 @@
                           <div class="card table-card">
                             <div class="card-header">
                               <h5>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝายและการบริหารจัดการพื้นที่เสี่ยงภัยแล้งและน้ำท่วมในจังหวัดลำปาง</h5>
-                              <br>โดยจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่
+                              <br>โดยองค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่
                               <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                   <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>

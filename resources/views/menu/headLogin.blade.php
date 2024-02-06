@@ -3,7 +3,7 @@
         <div class="navbar-logo">
            <a href="{{ asset('/list') }}">
                <!-- <img class="img-fluid" src="png/logo.png" alt="Logo" /> -->
-                <h6>Mae Jang Weir <br> Assessment System</h6>
+                <h6>Lampang Weir <br> Assessment System</h6>
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">
                <i class="feather icon-menu icon-toggle-right"></i>
