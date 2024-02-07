@@ -10,7 +10,7 @@
                 องค์การบริหารส่วนจังหวัดลำปาง <br> มหาวิทยาลัยเชียงใหม่
                </td>
                <td width=2% align="right"></td>
-               <td width=50% align="left"><a href="https://www.lampang.go.th/index1.php"> <img src="{{ asset('images/footer/lp.png') }}" width="15%"></a>
+               <td width=50% align="left"><a href="https://www.lp-pao.go.th/Main60/"> <img src="{{ asset('images/footer/lp.png') }}" width="15%"></a>
                 <a href="https://eng.cmu.ac.th/"> <img src="{{ asset('images/footer/cmu.png') }}" width="15%"></a>
             </td>
           </tr>
