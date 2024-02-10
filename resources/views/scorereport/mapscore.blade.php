@@ -269,7 +269,7 @@
                 maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
    
 
-      var runLayer = omnivore.kml('{{ asset('kml/bound_ขอบเขตลุ่มน้ำแม่จาง.kml') }}')
+      var runLayer = omnivore.kml('{{ asset('kml/bound_amphoe_lampang.kml') }}')
         .on('ready', function() {
             this.setStyle({
                       fillOpacity: 0,
