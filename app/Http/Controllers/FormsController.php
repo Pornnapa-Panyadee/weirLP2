@@ -1374,7 +1374,7 @@ class FormsController extends Controller
       }
 
       // dd($request);
-      if($request->resp_name1!=NULL||$request->resp_name2!=NULL||$request->resp_name2!=NULL){
+      if($request->resp_name1!=NULL||$request->resp_name2!=NULL||$request->resp_name3!=NULL){
             if($request->resp_name1!=NULL){
               $resp_name = $request->resp_name1;
             }else if($request->resp_name2!=NULL){
@@ -1385,6 +1385,7 @@ class FormsController extends Controller
       }else{
         $resp_name =NULL;
       }
+      // dd($resp_name);
         
       // /////--------weir_surveys-------------/////////
       $weir= WeirSurvey::where('weir_id',$request->weir_id)->update(
