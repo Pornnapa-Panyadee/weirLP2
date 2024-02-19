@@ -388,7 +388,7 @@
                                                     <div class="border-checkbox-section">                                               
                                                       <div class="border-checkbox-group border-checkbox-group-primary">
                                                         <input class="border-checkbox" type="checkbox" id="weir_type1" name="resp_type" {{checkdata(1,$weir[0]->Resp_type)}}>
-                                                        <label class="border-checkbox-label" for="weir_type1"> หน่วยงานตามภารกิจ {</label>
+                                                        <label class="border-checkbox-label" for="weir_type1"> หน่วยงานตามภารกิจ </label>
                                                       </div>
                                                     </div>
                                                   </td>
@@ -417,7 +417,7 @@
                                                   <td>
                                                     <div class="border-checkbox-section">                                               
                                                       <div class="border-checkbox-group border-checkbox-group-primary">
-                                                        <input class="border-checkbox" type="checkbox" id="weir_type3" name="weir_type" {{checkdata(3,$weir[0]->Resp_type)}}>
+                                                        <input class="border-checkbox" type="checkbox" id="weir_type3" name="resp_type" {{checkdata(3,$weir[0]->Resp_type)}}>
                                                         <label class="border-checkbox-label" for="weir_type3"> อื่นๆ </label>
                                                       </div>
                                                     </div>
