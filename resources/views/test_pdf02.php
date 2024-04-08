@@ -248,8 +248,14 @@
               </tr>
             </table>
         </div>
+        <table align="right">
+            <tr align="right">
+                <td>รหัสฝาย : <?php echo $weir[0]->weir_code ?> &nbsp;  </td>
+            </tr>
+        </table>
         
         <div class="text" >
+            
           <table>
             <tr>
                 <td class="line"><font class="outline">ผู้ตรวจสอบ&nbsp;&nbsp;</font>&nbsp;&nbsp;<?php echo $weir[0]->survey_name; ?> &nbsp;</td>
