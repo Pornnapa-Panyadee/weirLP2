@@ -156,7 +156,6 @@ class ReportPDFController extends Controller
                     ];
             }
         }
-        
         // dd($photo1);
         //$pdf = PDF::loadView('test_pdf',compact('mt','weir','location','user','districtData','river','model','locationUTM','locationLat','space','upprotection','upconcrete','control','downconcrete','downprotection','waterdelivery','plan','maintain','sug','photo1','photo2','photo3','photo4','photo5','photo6'));
         $pdf = PDF::loadView('test_pdf02',compact('mt','weir','location','districtData','river','model','locationUTM','locationLat','space','upprotection','upconcrete','control','downconcrete','downprotection','waterdelivery','plan','maintain','sug','photo1','photo2','photo3','photo4','photo5','photo6'));
@@ -398,14 +397,16 @@ class ReportPDFController extends Controller
             $waterdelivery[0]->section_status,
         ];
         
-        
-        if(!empty($expert->weir_solution)){
-            $name="weir_".$weir[0]->weir_code.".pdf";
-            $pdf = PDF::loadView('reportPDF.reportSum',compact('mt','area','expert','sediment','date','building','model_text','weir','location','districtData','river','model','locationUTM','locationLat','space','upprotection','upconcrete','control','downconcrete','downprotection','waterdelivery','plan','maintain','sug','photo1','photo2','photo3','photo4','photo5','photo6','damage'));
-            return $pdf->stream($name);
-        }else{
-            return view('guest.warning');  
-        }
+        $name="weir_".$weir[0]->weir_code.".pdf";
+        $pdf = PDF::loadView('reportPDF.reportSum',compact('mt','area','expert','sediment','date','building','model_text','weir','location','districtData','river','model','locationUTM','locationLat','space','upprotection','upconcrete','control','downconcrete','downprotection','waterdelivery','plan','maintain','sug','photo1','photo2','photo3','photo4','photo5','photo6','damage'));
+        return $pdf->stream($name);
+        // if(!empty($expert->weir_solution)){
+        //     $name="weir_".$weir[0]->weir_code.".pdf";
+        //     $pdf = PDF::loadView('reportPDF.reportSum',compact('mt','area','expert','sediment','date','building','model_text','weir','location','districtData','river','model','locationUTM','locationLat','space','upprotection','upconcrete','control','downconcrete','downprotection','waterdelivery','plan','maintain','sug','photo1','photo2','photo3','photo4','photo5','photo6','damage'));
+        //     return $pdf->stream($name);
+        // }else{
+        //     return view('guest.warning');  
+        // }
         
          
     }

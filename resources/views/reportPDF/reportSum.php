@@ -152,15 +152,16 @@
             <table >
                 <tr>
                     <td width="15%" align="right" >
-                        <img src='images/footer/lampang.png' width="30px" style="margin-top:20px;">
-                        <img src='images/footer/egat.jpg' width="50px">
+                        <img src='images/footer/lp.png' width="40px">
+                        <!-- <img src='images/footer/egat.jpg' width="50px"> -->
                         
                     </td>
                     <td width="70%">
                         <div class="texthead"> การตรวจสภาพฝายและแนวทางแก้ไขปรับปรุงเพื่อเพิ่มประสิทธิภาพฝาย ในจังหวัดลำปาง</div>
                     </td>
                     <td width="15%" align="left">
-                        <img src='images/footer/cmu.png' width="30px"></td>
+                        <img src='images/footer/cmu.png' width="40px"></td>
+                        
                     </td>    
                     
                 </tr>
