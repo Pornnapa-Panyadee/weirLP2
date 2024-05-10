@@ -359,6 +359,14 @@
                         <td width=8%><?php checkpair($space[0]->ridge_type->type,"อื่นๆ") ?>&nbsp;อื่นๆ</td>
                         <td width=20% class="line"><?php echo $space[0]->ridge_type->detail?></td>
                     </tr>
+                <table style="padding-left:50px;">
+                    <tr>
+                        <td width=20% class="line"><font class="outline">ความสูงสัน</font> &nbsp;&nbsp;<?php echo $space[0]->ridge_height;?> </td>
+                        <td width=10%> เมตร </td>
+                        <td width=20% class="line"><font class="outline">ความกว้างสัน</font> &nbsp;&nbsp;<?php echo $space[0]->ridge_width?> </td>
+                        <td> เมตร </td>
+                       
+                    </tr>
                 </table>
             <div class="text4">1.4 ประตูระบายน้ำ/ระบายทราย &nbsp;&nbsp;&nbsp;<?php checkHas($space[0]->gate_has)?>&nbsp;มี&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php checkZero($space[0]->gate_has)?> ไม่มี </div>   
                 <table style="padding-left:70px;">

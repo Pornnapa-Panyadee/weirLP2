@@ -264,8 +264,8 @@
                     <tr align="center"><th colspan="5" class="text-center" style="background-color:#C0C0C0">ลักษณะทั่วไป</th></tr>
                     <tr>
                         <td colspan="2"> ประเภทของสันฝาย :  &nbsp;<?php echo $space[0]->ridge_type->type; ?> </td>
-                        <td >ความสูงชัน :  &nbsp;<?php echo $space[0]->ridge_height; ?>  &nbsp;เมตร</td>
-                        <td colspan="2">ความกว้างสัน :  &nbsp;<?php echo $space[0]->ridge_width; ?>  &nbsp;เมตร</td>
+                        <td >ความสูงสันฝาย :  &nbsp;<?php echo $space[0]->ridge_height; ?>  &nbsp;เมตร</td>
+                        <td colspan="2">ความยาวสันฝาย :  &nbsp;<?php echo $space[0]->ridge_width; ?>  &nbsp;เมตร</td>
                     </tr>
                     <tr>
                         <td > ประตูระบายน้ำ :   &nbsp;<?php echo(checkhas($space[0]->gate_has)); ?> </td>
