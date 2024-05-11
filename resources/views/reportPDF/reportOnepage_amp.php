@@ -143,12 +143,9 @@
         <div class="row" align="center" style="page-break-after:always; margin-top:60px;"> 
             <table align="center" class="customers" width="80%">
                 <tr >
-                    <td width="30%" class="customers"><img src="images/footer/lampang.png" width="100px"></td>
-                    <td width="30%" class="customers"><img src="images/footer/egat.jpg" width="200px"></td>
+                    <td width="30%" class="customers"><img src="images/footer/lp.png" width="100px"></td>
+                    <td  class="customers"><font style="font-size:70px;"><b>รายงานสรุป</b></font></td>
                     <td width="30%" class="customers"><img src="images/footer/cmu.png" width="100px"></td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="customers"><font style="font-size:70px;"><b>รายงานสรุป</b></font></td>
                 </tr>
                 <tr>
                     <td colspan="3" height=200px; class="customers"> <font style="font-size:40px;"><b>ข้อมูลสภาพปัญหาและแนวทางแก้ไขปัญหาเบื้องต้นของฝาย</b></td>
@@ -211,8 +208,8 @@
                 <div class="headname">
                     <table align="center">
                         <td width="15%" align="right" >
-                            <img src='images/footer/lampang.png' width="30px" style="margin-top:5px;">
-                            <img src='images/footer/egat.jpg' width="50px"> 
+                            <img src='images/footer/lp.png' width="40px">
+                        
                         </td>
                         <td width="70%">
                             <div class="texthead"> <b>การตรวจสภาพฝายและแนวทางแก้ไขปรับปรุงเพื่อเพิ่มประสิทธิภาพฝาย ในจังหวัดลำปาง </b></div>
@@ -447,7 +444,7 @@
                             <th style="background-color:#C0C0C0; text-align:center" width="50%">สภาพโดยรวมของฝายและแนวทางแก้ไขปรับปรุงเบื้องต้น </th>
                         </tr>
                         <tr>
-                            <td  width="25%"> <center><img src="<?php echo($result[$i]['expert']->map); ?>"  width="90%" ></center>  </td>
+                            <td  width="25%"> <center><img src="<?php echo($result[$i]['expert'][0]->map); ?>"  width="90%" ></center>  </td>
                             <td  width="25%" valign="top" class="text_table"> 
                                 <u>ข้อมูลพื้นที่รับน้ำของฝาย</u><br>
                                 A = <?php echo $result[$i]['area']->area  ?>  ตารางกิโลเมตร <BR>
@@ -468,9 +465,9 @@
                             </td>
                             <td valign="top" class="text4">
                                 <b>สภาพโดยรวมของฝาย  </b> <br> 
-                                <?php echo $result[$i]['expert']->weir_problem ?> <br>
+                                <?php echo $result[$i]['expert'][0]->weir_problem ?> <br>
                                 <b>แนวทางแก้ไขปรับปรุงเบื้องต้น  </b> <br> 
-                                <?php echo $result[$i]['expert']->weir_solution ?>
+                                <?php echo $result[$i]['expert'][0]->weir_solution ?>
                             </td>
                         </tr>
                     </table>
