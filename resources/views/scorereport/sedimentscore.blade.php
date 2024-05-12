@@ -246,12 +246,15 @@
     <script type="text/javascript">
       var station1 = new L.LayerGroup();var station2 = new L.LayerGroup();
       var station3 = new L.LayerGroup();var station4 = new L.LayerGroup();
+      var station5 = new L.LayerGroup();var station6 = new L.LayerGroup();
 
       var station19 = new L.LayerGroup();var station20 = new L.LayerGroup();
       var station21 = new L.LayerGroup();var station22 = new L.LayerGroup();
+      var station23 = new L.LayerGroup();var station24 = new L.LayerGroup();
 
       var station37 = new L.LayerGroup();var station38 = new L.LayerGroup();
       var station39 = new L.LayerGroup();var station40 = new L.LayerGroup();
+      var station41 = new L.LayerGroup();var station42 = new L.LayerGroup();
 
       var rid = new L.LayerGroup();
       var ridNo = new L.LayerGroup();
@@ -383,19 +386,23 @@
         addPin(station2,1,"2",mo);
         addPin(station3,2,"2",mo);
         addPin(station4,3,"2",mo);
+        addPin(station5,4,"2",mo);
+        addPin(station6,5,"2",mo);
 
         addPin(station19,0,"3",mo);
         addPin(station20,1,"3",mo);
         addPin(station21,2,"3",mo);
         addPin(station22,3,"3",mo);
+        addPin(station23,4,"3",mo);
+        addPin(station24,5,"3",mo);
 
         addPin(station37,0,"4",mo);
         addPin(station38,1,"4",mo);
         addPin(station39,2,"4",mo);
         addPin(station40,3,"4",mo);
+        addPin(station41,4,"4",mo);
+        addPin(station42,5,"4",mo);
 
-
-      
 
       var baseTree = {
         label: 'BaseLayers',
@@ -417,6 +424,8 @@
                 { label:" "+amp[1],layer: station2},
                 { label:" "+amp[2],layer: station3},
                 { label:" "+amp[3],layer: station4},
+                { label:" "+amp[4],layer: station5},
+                { label:" "+amp[5],layer: station6},
           ]
         },
         {
@@ -427,6 +436,8 @@
                 { label:" "+amp[1],layer: station20},
                 { label:" "+amp[2],layer: station21},
                 { label:" "+amp[3],layer: station22},
+                { label:" "+amp[4],layer: station23},
+                { label:" "+amp[5],layer: station24},
           ]
         },
         {
@@ -437,12 +448,14 @@
                 { label:" "+amp[1],layer: station38},
                 { label:" "+amp[2],layer: station39},
                 { label:" "+amp[3],layer: station40},
+                { label:" "+amp[4],layer: station41},
+                { label:" "+amp[5],layer: station42},
           ]
         }
       ];
       
       var map = L.map('map', {
-          layers: [osm,station1,station2,station3,station4,station19,station20,station21,station22,station37,station38,station39,station40,borders],
+          layers: [osm,station1,station2,station3,station4,station5,station6,station19,station20,station21,station22,station23,station24,station37,station38,station39,station40,station41,station42,borders],
           center: [x,y],
           zoom: 10,
         });
