@@ -275,39 +275,9 @@ class MapScoreController extends Controller
     // API MAP Score
     public function score($amp = 0, $class = 0)
     {
-        // $imp = Impovement::select('*')->where('weir_amp', $amp)->where('improve_type', $class)->get();
-        if($amp=="เกาะคา"){
-            $location = WeirLocation::select('*')->where('weir_district', "เกาะคา")->get();
-            for ($i = 0; $i < count($location); $i++) {
-                $weir = WeirSurvey::select('*')->where('weir_location_id', $location[$i]->weir_location_id)->get();
-                $river = River::select('river_name')->where('river_id', $weir[0]->river_id)->get();
-                // $score = Impovement::select('*')->where('weir_id', $weir[0]->weir_id)->get()->last();
-                $score =Impovement::select('*')->where('weir_id', $weir[0]->weir_id)->get();
-                $latlong = json_decode($location[$i]->latlong);
-                
-                // dd($score[0]->improve_type);
-
-                // if ($score[0]->improve_type == $class) {
-
-                    $result[] = [
-                        'weir_id' => $weir[0]->weir_id,
-                        'weir_code' => $weir[0]->weir_code,
-                        'weir_name' => $weir[0]->weir_name,
-                        'lat' => $latlong->x,
-                        'long' => $latlong->y,
-                        'weir_village' => $location[$i]->weir_village,
-                        'weir_tumbol' => $location[$i]->weir_tumbol,
-                        'weir_district' => $location[$i]->weir_district,
-                        'river' => $river[0]->river_name,
-                        'score' => $score[0]->improve_type,
-                        'class' => $class
-                    ];
-                // }
-            }
-
-        }else{
-            $location = WeirLocation::select('*')->where('weir_district', $amp)->get();
-            // dd($location);
+        $location = WeirLocation::select('*')->where('weir_district', $amp)->get();
+            // dd(count($location));
+            // dd($location[25]);
             for ($i = 0; $i < count($location); $i++) {
                 $weir = WeirSurvey::select('*')->where('weir_location_id', $location[$i]->weir_location_id)->get();
                 $river = River::select('river_name')->where('river_id', $weir[0]->river_id)->get();
@@ -332,8 +302,6 @@ class MapScoreController extends Controller
                     ];
                 }
             }
-        }
-        
        
         $result = json_encode($result);
         echo $result;
