@@ -284,9 +284,9 @@ class MapScoreController extends Controller
                 $score = Impovement::select('*')->where('weir_id', $weir[0]->weir_id)->get()->last();
                 $latlong = json_decode($location[$i]->latlong);
                 
-                // dd($score[0]->improve_type);
+                // dd($score);
 
-                if ($score->improve_type == $class) {
+                if ($score[0]->improve_type == $class) {
 
                     $result[] = [
                         'weir_id' => $weir[0]->weir_id,
@@ -298,7 +298,7 @@ class MapScoreController extends Controller
                         'weir_tumbol' => $location[$i]->weir_tumbol,
                         'weir_district' => $location[$i]->weir_district,
                         'river' => $river[0]->river_name,
-                        'score' => $score->improve_type,
+                        'score' => $score[0]->improve_type,
                     ];
                 }
             }
