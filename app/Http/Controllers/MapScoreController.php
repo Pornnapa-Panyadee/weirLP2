@@ -285,7 +285,7 @@ class MapScoreController extends Controller
                 $score =Impovement::select('*')->where('weir_id', $weir[0]->weir_id)->get();
                 $latlong = json_decode($location[$i]->latlong);
                 
-                // dd($score);
+                dd($score);
 
                 // if ($score[0]->improve_type == $class) {
 
