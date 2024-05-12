@@ -359,6 +359,7 @@
                         <td width=8%><?php checkpair($space[0]->ridge_type->type,"อื่นๆ") ?>&nbsp;อื่นๆ</td>
                         <td width=20% class="line"><?php echo $space[0]->ridge_type->detail?></td>
                     </tr>
+                </table>
                 <table style="padding-left:50px;">
                     <tr>
                         <td width=20% class="line"><font class="outline">ความสูงสัน</font> &nbsp;&nbsp;<?php echo $space[0]->ridge_height;?> </td>
