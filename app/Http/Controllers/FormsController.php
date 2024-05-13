@@ -110,7 +110,7 @@ class FormsController extends Controller
               return 0;
             }
           }
-          // set Jason form
+          // set Json form
             $model =[
               'self'=>[
                 'weir_self'=>addNULL(!empty($request->weir_model['self']['weir_self'])),
@@ -314,13 +314,22 @@ class FormsController extends Controller
             }
           }
         // Connenct Data base
-          $weir_id_last = DB::table('weir_surveys')->select('weir_id')->orderBy('created_at', 'asc')->get()->last();
-          $river_id_last= DB::table('rivers')->select('river_id')->orderBy('created_at', 'asc')->get()->last();
-          $weir_spec_id_last= DB::table('weir_spaceifications')->select('weir_spec_id')->orderBy('created_at', 'asc')->get()->last();
-          $weir_location_id_last= DB::table('weir_locations')->select('weir_location_id')->orderBy('created_at', 'asc')->get()->last();
-          $maintain_id_last= DB::table('maintenances')->select('maintain_id')->orderBy('created_at', 'asc')->get()->last();
-          $plan_id_last= DB::table('improvement_plans')->select('plan_id')->orderBy('created_at', 'asc')->get()->last();
-          $suggest_id_last= DB::table('additinal_suggestions')->select('suggest_id')->orderBy('created_at', 'asc')->get()->last();
+          // $weir_id_last = DB::table('weir_surveys')->select('weir_id')->orderBy('created_at', 'asc')->get()->last();
+          // $river_id_last= DB::table('rivers')->select('river_id')->orderBy('created_at', 'asc')->get()->last();
+          // $weir_spec_id_last= DB::table('weir_spaceifications')->select('weir_spec_id')->orderBy('created_at', 'asc')->get()->last();
+          // $weir_location_id_last= DB::table('weir_locations')->select('weir_location_id')->orderBy('created_at', 'asc')->get()->last();
+          // $maintain_id_last= DB::table('maintenances')->select('maintain_id')->orderBy('created_at', 'asc')->get()->last();
+          // $plan_id_last= DB::table('improvement_plans')->select('plan_id')->orderBy('created_at', 'asc')->get()->last();
+          // $suggest_id_last= DB::table('additinal_suggestions')->select('suggest_id')->orderBy('created_at', 'asc')->get()->last();
+
+          $weir_id_last = DB::table('weir_surveys')->select('weir_id')->get()->last();
+          $river_id_last= DB::table('rivers')->select('river_id')->get()->last();
+          $weir_spec_id_last= DB::table('weir_spaceifications')->select('weir_spec_id')->get()->last();
+          $weir_location_id_last= DB::table('weir_locations')->select('weir_location_id')->get()->last();
+          $maintain_id_last= DB::table('maintenances')->select('maintain_id')->get()->last();
+          $plan_id_last= DB::table('improvement_plans')->select('plan_id')->get()->last();
+          $suggest_id_last= DB::table('additinal_suggestions')->select('suggest_id')->get()->last();
+
 
           $weir_id="W".calCode($weir_id_last,"weir_id");
           $river_id="R".calCode($river_id_last,"river_id");
@@ -329,9 +338,9 @@ class FormsController extends Controller
           $maintain_id="M".calCode($maintain_id_last,"maintain_id");
           $plan_id="P".calCode($plan_id_last,"plan_id");
           $suggest_id="S".calCode($suggest_id_last,"suggest_id");
-
+          //dd($river_id_last);
           $vill=explode(" ",$request->weir_village);
-          // dd($vill);
+          //dd($request->weir_village);
           $code =DB::table('locations')->select('vill_code')->where('vill_name',$vill[2] )->where('vill_moo',$vill[1])->get();
           
           $codeweir="W".$code[0]->vill_code.'%';       
@@ -358,7 +367,7 @@ class FormsController extends Controller
           // dd($n);
           // $num=calCodeW(count($weircode));
           // $codeweir="W".$code[0]->vill_code.$num;
-        // dd($codeweir);
+        //dd($river_id);
 
         // Insert Data
         /////--------weir_surveys-------------/////////
