@@ -270,9 +270,9 @@
                                                                                     <?php for ($i = 1; $i < 7; $i++) { ?>
                                                                                         <tr>
                                                                                             <td>{{$head[$i]}}</td>
+                                                                                            <td align="center" width=20%>{{$e[0][$i]}}</td>
                                                                                             <td align="center" width=20%>{{$e[1][$i]}}</td>
                                                                                             <td align="center" width=20%>{{$e[2][$i]}}</td>
-                                                                                            <td align="center" width=20%>{{$e[3][$i]}}</td>
                                                                                         </tr>
                                                                                     <?php } ?>
                                                                                 </tbody>
