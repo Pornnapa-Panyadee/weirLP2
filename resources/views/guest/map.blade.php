@@ -235,10 +235,12 @@
           popupAnchor: [0, 0]
         });
      
-     var amp="{{$location[0]->weir_district}}";
-      
+     var amp="{{$location[0]['weir_district']}}";
+    //  alert (amp);
       
       function addPin(ampName,i,mo){
+        
+        if(amp=="ห้างฉัตร" || amp=="เกาะคา"|| amp=="สบปราบ" || amp=="เถิน" || amp=="แจ้ห่ม" || amp=="งาว"){
           $.getJSON("{{ asset('form/getDataSurvey')}}/"+amp, 
           function (data){
             // alert (data[0].lat);
@@ -251,7 +253,7 @@
                   text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ฝาย : "+ data[i].weir_name+ " (ลำน้ำ : "+ data[i].river+")</font><br>";
                   text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 >ที่ตั้ง : "+ data[i].weir_village +" ต."+ data[i].weir_tumbol +" อ."+ data[i].weir_district +"</font><br>";
                   text3 ="<br><table align=\"center\"><tr><td >" + "<a href='{{ asset('report/pdf') }}/"+data[i].weir_code+"' target=\"_blank\"> <button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-sidebar\"></i> รายงาน</button> </a></td> <td> <a href='{{ asset('/pdf') }}/"+data[i].weir_code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-eye\"></i> แบบสำรวจ</button> </a>" +"</td><td > <a href='{{ asset('/photo') }}/"+data[i].weir_code+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a></td></tr></table>";
-            if(data[i].weir_code=='{{$weir[0]->weir_code}}'){
+            if(data[i].weir_code=='{{$weir[0]['weir_code']}}'){
               if(mo==0){
                 L.marker([x,y],{icon: pinMOR}).addTo(ampName).bindPopup(text+text1+text2+text3);  
               }else{
@@ -266,6 +268,34 @@
             }
             }//end for
           });
+        }else{
+          $.getJSON("https://watercenter.scmc.cmu.ac.th/weir/jang_basin/form/getDataSurvey/"+amp, 
+          function (data){
+            for (i=0;i<data.length;i++){
+              // var lo =data[i].geometry.coordinates+ '';;
+              var x=data[i]['lat'];
+              var y=data[i]['long'];
+              // alert (x);
+              var text ="<font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > รหัส :" + data[i].weir_code + "</font><br>";
+                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ฝาย : "+ data[i].weir_name+ " (ลำน้ำ : "+ data[i].river+")</font><br>";
+                  text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 >ที่ตั้ง : "+ data[i].weir_village +" ต."+ data[i].weir_tumbol +" อ."+ data[i].weir_district +"</font><br>";
+                  text3 ="<br><table align=\"center\"><tr><td >" + "<a href='{{ asset('pdf/report/weir_') }}"+"WLP02050201"+".pdf ' target=\"_blank\"> <button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-sidebar\"></i> รายงาน</button> </a></td> <td> <a href='{{ asset('/pdf') }}/"+data[i].weir_code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-eye\"></i> แบบสำรวจ</button> </a>" +"</td><td > <a href='{{ asset('/photo') }}/"+data[i].weir_code+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a></td></tr></table>";
+            if(data[i].weir_code=='{{$weir[0]['weir_code']}}'){
+              if(mo==0){
+                L.marker([x,y],{icon: pinMOR}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+              }else{
+                L.marker([x,y],{icon: pinMOR}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+              }
+            }else{
+                if(mo==0){
+                L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+              }else{
+                L.marker([x,y],{icon: pin}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+              }
+            }
+            }//end for
+          });
+        }
         
         
       }

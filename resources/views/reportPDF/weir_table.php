@@ -134,12 +134,9 @@
         <div class="row" align="center" style="page-break-after:always; margin-top:60px;"> 
             <table align="center" class="customers" width="80%">
                 <tr >
-                    <td width="30%" class="customers"><img src="images/footer/lampang.png" width="100px"></td>
-                    <td width="30%" class="customers"><img src="images/footer/egat.jpg" width="200px"></td>
+                    <td width="30%" class="customers"><img src="images/footer/lp.png" width="100px"></td>
+                    <td class="customers"><font style="font-size:70px;"><b>รายงานสรุป</b></font></td>
                     <td width="30%" class="customers"><img src="images/footer/cmu.png" width="100px"></td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="customers"><font style="font-size:70px;"><b>รายงานสรุป</b></font></td>
                 </tr>
                 <tr>
                     <td colspan="3" height=150px; class="customers"> <font style="font-size:42px;"><b>ผลการตรวจประเมินสภาพฝายแต่ละองค์ประกอบ</b></td>
@@ -148,7 +145,7 @@
                     <td colspan="3" height=150px; class="customers"> <font style="font-size:50px;"><b><?php echo $text_amp ?>  จังหวัดลำปาง</b></td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="customers"> <font style="font-size:32px;"><b>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝายและการบริหารจัดการพื้นที่เสี่ยงภัยแล้งและน้ำท่วมในจังหวัดลำปาง<b></td>
+                    <td colspan="3" class="customers"> <font style="font-size:32px;"><b>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝาย <br>และการบริหารจัดการพื้นที่เสี่ยงภัยแล้งและน้ำท่วมในจังหวัดลำปาง<b></td>
                 </tr>
                 <tr>
                     <td colspan="3" height=80px;> <font style="font-size:26px;"><b>โดย องค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่<b></td>

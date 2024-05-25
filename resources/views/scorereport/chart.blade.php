@@ -185,7 +185,7 @@
                                                                                 <td align="right">อำเภอ :</td>
                                                                                 <td>
                                                                                     <select name="amp" class="selectpicker " id="amp" onchange="this.form.submit();">
-                                                                                        <option value="0"> &nbsp;&nbsp;- - กรุณาเลือกอำเภอ - -</option>
+                                                                                        <option value="sum"> &nbsp;&nbsp;- - กรุณาเลือกอำเภอ - -</option>
                                                                                         <option value="sum">ทั้งหมด</option>
                                                                                         <option value="ห้างฉัตร">ห้างฉัตร</option>
                                                                                         <option value="เกาะคา">เกาะคา</option>
@@ -193,6 +193,9 @@
                                                                                         <option value="เถิน">เถิน</option>
                                                                                         <option value="แจ้ห่ม">แจ้ห่ม</option>
                                                                                         <option value="งาว">งาว</option> 
+                                                                                        <option value="แม่เมาะ">แม่เมาะ</option> 
+                                                                                        <option value="แม่ทะ">แม่ทะ</option> 
+                                                                                        <option value="เกาะคา1">เกาะคา (กฟภ) *ไม่ต้องเลือกตำบล</option>
                                                                                     </select>
                                                                                 </td>
                                                                             </tr>
@@ -267,9 +270,9 @@
                                                                                     <?php for ($i = 1; $i < 7; $i++) { ?>
                                                                                         <tr>
                                                                                             <td>{{$head[$i]}}</td>
-                                                                                            <td align="center" width=20%>{{$e[0][$i]}}</td>
                                                                                             <td align="center" width=20%>{{$e[1][$i]}}</td>
                                                                                             <td align="center" width=20%>{{$e[2][$i]}}</td>
+                                                                                            <td align="center" width=20%>{{$e[3][$i]}}</td>
                                                                                         </tr>
                                                                                     <?php } ?>
                                                                                 </tbody>

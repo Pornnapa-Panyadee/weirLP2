@@ -81,6 +81,9 @@
                                                                                                 <option value="เถิน">เถิน</option>
                                                                                                 <option value="แจ้ห่ม">แจ้ห่ม</option>
                                                                                                 <option value="งาว">งาว</option>  
+                                                                                                <option value="แม่เมาะ">แม่เมาะ</option> 
+                                                                                                <option value="แม่ทะ">แม่ทะ</option> 
+                                                                                                <option value="เกาะคา1">เกาะคา (กฟภ) *ไม่ต้องเลือกตำบล</option>
                                                                                             </select> 
                                                                                             <span class="messages"></span>
                                                                                         </td>

@@ -164,14 +164,36 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <?php for($i = 0;$i < count($result);$i++){  ?>
+                                          <?php for($i = 0;$i < count($result);$i++){  
+                                             if($result[$i]['amp']!="เกาะคา"){?>
                                           <tr >
                                             <td width=25%>{{$result[$i]['amp']}}</td>
                                             <td width=20% align="center">{{$result[$i]['score_Y']}} </td>
                                             <td width=20% align="center">{{$result[$i]['score_O']}} </td>
                                             <td width=20% align="center">{{$result[$i]['score_R']}} </td>
                                           </tr>
-                                          <?php } ?>                                              
+                                          <?php } }   
+                                          
+                                          $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/sedimentTable';
+                                          $jsonData = file_get_contents($apiUrl);
+                                          $dataArray = json_decode($jsonData, true);
+
+                                          for ($i = 0; $i < count($dataArray); $i++) {                                          
+                                           if($i!=1){?> 
+                                              <tr >
+                                                <td width=25%>{{$dataArray[$i]['amp']}}</td>
+                                                <td width=20% align="center">{{$dataArray[$i]['score_Y']}}</td>
+                                                <td width=20% align="center">{{$dataArray[$i]['score_O']}} </td>
+                                                <td width=20% align="center">{{$dataArray[$i]['score_R']}} </td>
+                                              </tr>
+                                          <?php } }?>  
+                                          <tr>
+                                            <td width=25%>เกาะคา</td>
+                                            <td width=20% align="center">25</td>
+                                            <td width=20% align="center">41 </td>
+                                            <td width=20% align="center">9 </td>
+
+                                          </tr>      
                                                                                                                                         
                                         </tbody>                                                                    
                                         
@@ -247,14 +269,17 @@
       var station1 = new L.LayerGroup();var station2 = new L.LayerGroup();
       var station3 = new L.LayerGroup();var station4 = new L.LayerGroup();
       var station5 = new L.LayerGroup();var station6 = new L.LayerGroup();
+      var station7 = new L.LayerGroup();var station8 = new L.LayerGroup();
 
       var station19 = new L.LayerGroup();var station20 = new L.LayerGroup();
       var station21 = new L.LayerGroup();var station22 = new L.LayerGroup();
       var station23 = new L.LayerGroup();var station24 = new L.LayerGroup();
+      var station25 = new L.LayerGroup();var station26 = new L.LayerGroup();
 
       var station37 = new L.LayerGroup();var station38 = new L.LayerGroup();
       var station39 = new L.LayerGroup();var station40 = new L.LayerGroup();
       var station41 = new L.LayerGroup();var station42 = new L.LayerGroup();
+      var station43 = new L.LayerGroup();var station44 = new L.LayerGroup();
 
       var rid = new L.LayerGroup();
       var ridNo = new L.LayerGroup();
@@ -330,10 +355,11 @@
         });
 
 
-      var amp=["ห้างฉัตร","เกาะคา","สบปราบ","เถิน","แจ้ห่ม","งาว"];
+      var amp=["ห้างฉัตร","เกาะคา","สบปราบ","เถิน","แจ้ห่ม","งาว","แม่เมาะ","แม่ทะ","เกาะคา"];
       
       
       function addPin(ampName,i,c,mo){
+        if(i<6){
           $.getJSON("{{ asset('sedimentscore') }}/"+amp[i]+"/"+c, 
           function (data){
             // alert (ampName);
@@ -369,6 +395,43 @@
                 
             }//end for
           });
+        }else{
+          $.getJSON("https://watercenter.scmc.cmu.ac.th/weir/jang_basin/sedimentscore/"+amp[i]+"/"+c, 
+          function (data){
+            // alert (ampName);
+            for (i=0;i<data.length;i++){
+              // var lo =data[i].geometry.coordinates+ '';;
+              var x=data[i].lat;
+              var y=data[i].long;
+              // alert (x);
+              var text ="<font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > รหัส :" + data[i].weir_code + "</font><br>";
+                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ฝาย : "+ data[i].weir_name+ " (ลำน้ำ : "+ data[i].river+")</font><br>";
+                  text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 >ที่ตั้ง : "+ data[i].weir_village +" ต."+ data[i].weir_tumbol +" อ."+ data[i].weir_district +"</font><br>";
+                  text3 ="<br><table align=\"center\"><tr><td >" + "<a href='{{ asset('report/pdf') }}/"+data[i].weir_code+"' target=\"_blank\"><button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-sidebar\"></i> รายงาน</button> </a></td> <td> <a href='{{ asset('/pdf') }}/"+data[i].weir_code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-eye\"></i> แบบสำรวจ</button> </a>" +"</td><td > <a href='{{ asset('/photo') }}/"+data[i].weir_code+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a></td></tr></table>";
+              if(c=="1"){
+                if(mo==0){
+                    L.marker([x,y],{icon: pinMO_N}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+                }else{
+                    L.marker([x,y],{icon: pin_N}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+                }
+              }else if(c=="2"){
+                if(mo==0){
+                    L.marker([x,y],{icon: pinMO_O}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+                }else{
+                    L.marker([x,y],{icon: pin_O}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+                }
+              }else{
+                if(mo==0){
+                    L.marker([x,y],{icon: pinMO_R}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+                }else{
+                    L.marker([x,y],{icon: pin_R}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+                }
+              }
+
+                
+            }//end for
+          });
+        }
         
         
       }
@@ -388,6 +451,9 @@
         addPin(station4,3,"2",mo);
         addPin(station5,4,"2",mo);
         addPin(station6,5,"2",mo);
+        addPin(station7,6,"2",mo);
+        addPin(station8,7,"2",mo);
+        addPin(station2,7,"2",mo);
 
         addPin(station19,0,"3",mo);
         addPin(station20,1,"3",mo);
@@ -395,6 +461,9 @@
         addPin(station22,3,"3",mo);
         addPin(station23,4,"3",mo);
         addPin(station24,5,"3",mo);
+        addPin(station25,6,"3",mo);
+        addPin(station26,7,"3",mo);
+        addPin(station20,1,"3",mo);
 
         addPin(station37,0,"4",mo);
         addPin(station38,1,"4",mo);
@@ -402,6 +471,9 @@
         addPin(station40,3,"4",mo);
         addPin(station41,4,"4",mo);
         addPin(station42,5,"4",mo);
+        addPin(station43,6,"4",mo);
+        addPin(station44,7,"4",mo);
+        addPin(station38,1,"4",mo);
 
 
       var baseTree = {
@@ -426,6 +498,8 @@
                 { label:" "+amp[3],layer: station4},
                 { label:" "+amp[4],layer: station5},
                 { label:" "+amp[5],layer: station6},
+                { label:" "+amp[6],layer: station7},
+                { label:" "+amp[7],layer: station8},
           ]
         },
         {
@@ -438,6 +512,8 @@
                 { label:" "+amp[3],layer: station22},
                 { label:" "+amp[4],layer: station23},
                 { label:" "+amp[5],layer: station24},
+                { label:" "+amp[6],layer: station25},
+                { label:" "+amp[7],layer: station26},
           ]
         },
         {
@@ -450,14 +526,16 @@
                 { label:" "+amp[3],layer: station40},
                 { label:" "+amp[4],layer: station41},
                 { label:" "+amp[5],layer: station42},
+                { label:" "+amp[6],layer: station43},
+                { label:" "+amp[7],layer: station44},
           ]
         }
       ];
       
       var map = L.map('map', {
-          layers: [osm,station1,station2,station3,station4,station5,station6,station19,station20,station21,station22,station23,station24,station37,station38,station39,station40,station41,station42,borders],
+          layers: [osm,station1,station2,station3,station4,station5,station6,station7,station8,station19,station20,station21,station22,station23,station24,station25,station26,station37,station38,station39,station40,station41,station42,station43,station44,borders],
           center: [x,y],
-          zoom: 10,
+          zoom: 8,
         });
       ctl.addTo(map).collapseTree().expandSelected();
 

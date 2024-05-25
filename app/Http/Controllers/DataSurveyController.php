@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http; // Import the Http facade
 use DB;
 use Auth;
 use AuthenticatesUsers;
@@ -276,9 +277,21 @@ class DataSurveyController extends Controller
     public function getDatabyWeir($id=0) {
         header('Access-Control-Allow-Origin: *');
         $weir = WeirSurvey::select('weir_id','weir_code','weir_name','weir_location_id')->where('weir_code',$id)->get();
-        $location = WeirLocation::select('*')->where('weir_location_id',$weir[0]->weir_location_id)->get();
-        $latlong=json_decode($location[0]->latlong);
-        // dd($latlong);
+        // dd($weir[0]['weir_id']);
+        if(!empty($weir[0]['weir_id'])){
+            $location = WeirLocation::select('*')->where('weir_location_id',$weir[0]->weir_location_id)->get();
+            $latlong=json_decode($location[0]->latlong);
+        }else{
+            $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/location/'.$id;
+            $response = Http::get($apiUrl);
+            $data = $response->json();
+            $weir=$data[0]['weir'];
+            $location = $data[0]['location'];
+            $latlong=json_decode($location[0]['latlong']);
+            
+        }
+        // dd($weir);
+        
         return view('guest.map',compact('weir','location','latlong')); 
     }
 

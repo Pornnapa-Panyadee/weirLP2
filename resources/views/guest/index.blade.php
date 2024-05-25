@@ -267,9 +267,33 @@
                                             
                                           </td>
                                         </tr>
-                                      <?php } ?>                                                                                                 
+                                      <?php }?>
+                                      <?php
+                                        $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/getDataHomeTable';
+                                        $jsonData = file_get_contents($apiUrl);
+                                        $dataArray = json_decode($jsonData, true);
+
+                                        for ($i = 0; $i < count($dataArray[0]['data']); $i++) {?>
+                                          <tr>
+                                            <td align="center">{{$i+740}} </td>
+                                            <td>{{$dataArray[0]['data'][$i]['weir_code']}} </td>
+                                            <td>{{$dataArray[0]['data'][$i]['weir_name']}}/{{$dataArray[0]['data'][$i]['river']}} </td>
+                                            <td>{{$dataArray[0]['data'][$i]['weir_village']}}</td>
+                                            <td>{{$dataArray[0]['data'][$i]['weir_tumbol']}}  </td>
+                                            <td>{{$dataArray[0]['data'][$i]['weir_district']}}</td>
+                                            <td align="center" > 
+                                              <a href='{{ asset('/report/pdf') }}/{{$dataArray[0]['data'][$i]['weir_code']}}' class="btn waves-effect waves-light btn-facebook" target="_blank"><i class="feather icon-sidebar"></i>รายงาน</a>
+                                              <a href='{{ asset('/pdf') }}/{{$dataArray[0]['data'][$i]['weir_code']}}' class="btn waves-effect waves-light btn-dropbox" target="_blank"><i class="feather icon-eye"></i>แบบสำรวจ</a>
+                                              <a href='{{ asset('/photo') }}/{{$dataArray[0]['data'][$i]['weir_code']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
+                                              <a href='{{ asset('/map') }}/{{$dataArray[0]['data'][$i]['weir_code']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>แผนที่</a>
+                                            
+                                              
+                                            </td>
+                                          </tr>
+                                        <?php }?>  
                                       </tbody>
                                     </table>
+                                    
                                   </div>
                                 </div>    
                             </div>
@@ -337,12 +361,17 @@
     <script src="{{ asset('/js/L.Control.Layers.Tree.js')}}"></script>
 
     <script type="text/javascript">
+      
       var station1 = new L.LayerGroup();
       var station2 = new L.LayerGroup();
       var station3 = new L.LayerGroup();
       var station4 = new L.LayerGroup();
       var station5 = new L.LayerGroup();
       var station6 = new L.LayerGroup();
+      var station7 = new L.LayerGroup();
+      var station8 = new L.LayerGroup();
+      var station9 = new L.LayerGroup();
+      var station10 = new L.LayerGroup();
 
       var rid = new L.LayerGroup();
       var ridNo = new L.LayerGroup();
@@ -358,7 +387,7 @@
           osmBw = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
                 maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
       var map = L.map('map', {
-          layers: [osm,station1,station2,station3,station4,station5,station6,borders],
+          layers: [osm,station1,station2,station3,station4,station5,station6,station7,station8,station9,station10,borders],
           center: [x,y],
           zoom: 8,
         });
@@ -388,11 +417,18 @@
           popupAnchor: [0, 0]
         });
            
-     var amp=["ห้างฉัตร", "เกาะคา", "สบปราบ","เถิน","แจ้ห่ม","งาว"];    
+     var amp=["ห้างฉัตร", "เกาะคา", "สบปราบ","เถิน","แจ้ห่ม","งาว","เมืองลำปาง","เกาะคา","แม่ทะ","แม่เมาะ"];    
       
-      
+      function checkname(name){
+        if(name!=null){
+          return name;
+        }else{
+          return "- ";
+        }
+      }
       function addPin(ampName,i,mo){
-        
+
+        if(i<6){
           $.getJSON("{{ asset('form/getDataSurvey') }}/"+amp[i], 
           function (data){
             // alert (data[0].lat);
@@ -402,7 +438,7 @@
               var y=data[i].long;
               // alert (x);
               var text ="<font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > รหัส :" + data[i].weir_code + "</font><br>";
-                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ฝาย : "+ data[i].weir_name+ " (ลำน้ำ : "+ data[i].river+")</font><br>";
+                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ฝาย : "+ checkname(data[i].weir_name)+ " (ลำน้ำ : "+ data[i].river+")</font><br>";
                   text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 >ที่ตั้ง : "+ data[i].weir_village +" ต."+ data[i].weir_tumbol +" อ."+ data[i].weir_district +"</font><br>";
                   text3 ="<br><table align=\"center\"><tr><td >" + "<a href='{{ asset('report/pdf') }}/"+data[i].weir_code+"' target=\"_blank\"><button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-sidebar\"></i> รายงาน</button> </a></td> <td> <a href='{{ asset('/pdf') }}/"+data[i].weir_code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-eye\"></i> แบบสำรวจ</button> </a>" +"</td><td > <a href='{{ asset('/photo') }}/"+data[i].weir_code+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a></td></tr></table>";
               if(mo==0){
@@ -412,6 +448,26 @@
               }
             }//end for
           });
+        }else{
+          $.getJSON("https://watercenter.scmc.cmu.ac.th/weir/jang_basin/form/getDataSurvey/"+amp[i], 
+          function (data){
+            for (i=0;i<data.length;i++){
+              var x=data[i].lat;
+              var y=data[i].long;
+              var text ="<font style=\"font-family: 'Mitr';\" size=\"3\"COLOR=#1AA90A > รหัส :" + data[i].weir_code + "</font><br>";
+                  text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ฝาย : "+ checkname(data[i].weir_name)+ " (ลำน้ำ : "+ data[i].river+")</font><br>";
+                  text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 >ที่ตั้ง : "+ data[i].weir_village +" ต."+ data[i].weir_tumbol +" อ."+ data[i].weir_district +"</font><br>";
+                  
+                  text3 ="<br><table align=\"center\"><tr><td >" + "<a href='{{ asset('pdf/report/weir_') }}"+"WLP02050201"+".pdf ' target=\"_blank\"><button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-sidebar\"></i> รายงาน</button> </a></td> <td> <a href='{{ asset('/pdf') }}/"+data[i].weir_code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-eye\"></i> แบบสำรวจ</button> </a>" +"</td><td > <a href='{{ asset('/photo') }}/"+data[i].weir_code+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a></td></tr></table>";
+                  // text3 ="<br><table align=\"center\"><tr><td >" + "<a href='{{ asset('report/pdf') }}/"+data[i].weir_code+"' target=\"_blank\"><button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-sidebar\"></i> รายงาน</button> </a></td> <td> <a href='{{ asset('/pdf') }}/"+data[i].weir_code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-eye\"></i> แบบสำรวจ</button> </a>" +"</td><td > <a href='{{ asset('/photo') }}/"+data[i].weir_code+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a></td></tr></table>";
+              if(mo==0){
+                L.marker([x,y],{icon: pinMO}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+              }else{
+                L.marker([x,y],{icon: pin}).addTo(ampName).bindPopup(text+text1+text2+text3);  
+              }
+            }//end for
+          });
+        }
                 
       }
 
@@ -431,6 +487,10 @@
       addPin(station4,3,mo);
       addPin(station5,4,mo);
       addPin(station6,5,mo);
+      addPin(station7,6,mo);
+      addPin(station2,7,mo);
+      addPin(station9,8,mo);
+      addPin(station10,9,mo);
 
       var baseTree = {
           label: 'BaseLayers',
@@ -455,6 +515,9 @@
                 { label:" "+amp[3],layer: station4},
                 { label:" "+amp[4],layer: station5},
                 { label:" "+amp[5],layer: station6},
+                { label:" "+amp[6],layer: station7},
+                { label:" "+amp[8],layer: station9},
+                { label:" "+amp[9],layer: station10}
           ]
         }];
         

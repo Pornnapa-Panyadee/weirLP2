@@ -233,7 +233,7 @@
                                 <div class="card-header">
                                   <h5> <a href="{{ asset('/') }}">หน้าหลัก </a> &raquo;  รูปภาพประกอบของฝาย : {{$weir_id}}</h5>
                                 
-                                
+                                  <?php if($proj==1){?>
                                   <!-- pix Show -->
                                   <div class="card-block p-b-0">
                                       <div class="card-body" >
@@ -415,7 +415,188 @@
                                     
                                   </div>
                                   <!-- End Map show -->
-                                                          
+                                  <?php }else{ ?>
+                                    <div class="card-block p-b-0">
+                                      <div class="card-body" >
+                                        <!-- image -->
+                                        <div class="alert alert-primary" style="margin:0 -20px 0;">รูปภาพแผนที่แสดงขอบเขตพื้นที่รับน้ำ </div>
+                                          <div class="row" id="showpixrow">
+                                            <div class="column" id="showpix">
+                                                <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$expert['map']}}"  onclick="openModal();currentSlide(1)" style="width:20%" class="hover-shadow cursor">
+                                            </div>
+                                            
+                                          </div>
+
+                                          <div class="alert alert-primary" style="margin:0 -20px 0;">1.ส่วน Protection เหนือน้ำ</div>
+                                          <div class="row" id="showpixrow">
+                                              <?php for($i=0;$i<$num1;$i++){?>
+                                                  <div class="column" id="showpix">
+                                                      <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo1[$i]['file']}} " onclick="openModal();currentSlide({{$i+2}})" style="width:100%" class="hover-shadow cursor">
+                                                  </div>
+                                              <?php } ?> 
+                                          </div>
+                                          <div class="alert alert-primary" style="margin:0 -20px 0;">2.ส่วนเหนือน้ำ</div>
+                                          <div class="row" id="showpixrow">
+                                              <?php for($i=0;$i<$num2;$i++){?>
+                                                  <div class="column" id="showpix">
+                                                    <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo2[$i]['file']}}" onclick="openModal();currentSlide({{$i+$num1+2}})" style="width:100%" class="hover-shadow cursor">
+                                                  </div>
+                                              <?php } ?> 
+                                          </div>
+
+                                          <div class="alert alert-primary" style="margin:0 -20px 0;">3.ส่วนควบคุม </div>
+                                          <div class="row" id="showpixrow">
+                                              <?php for($i=0;$i<$num3;$i++){?>
+                                                  <div class="column" id="showpix">
+                                                  <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo3[$i]['file']}}" onclick="openModal();currentSlide({{$i+$num1+$num2+2}})" style="width:100%" class="hover-shadow cursor">
+                                                  </div>
+                                              <?php } ?> 
+                                          </div>
+
+                                          <div class="alert alert-primary" style="margin:0 -20px 0;">4.ส่วนท้ายน้ำ </div>
+                                          <div class="row" id="showpixrow">
+                                              <?php for($i=0;$i<$num4;$i++){?>
+                                                  <div class="column" id="showpix">
+                                                    <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo4[$i]['file']}}" onclick="openModal();currentSlide({{$i+$num1+$num2+$num3+2}})" style="width:100%" class="hover-shadow cursor">
+                                                  </div>
+                                              <?php } ?> 
+                                          </div>
+                                          <div class="alert alert-primary" style="margin:0 -20px 0;">5.ส่วน Protection ท้ายน้ำ </div>
+                                          <div class="row" id="showpixrow">
+                                              <?php for($i=0;$i<$num5;$i++){?>
+                                                  <div class="column" id="showpix">
+                                                    <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo5[$i]['file']}}" onclick="openModal();currentSlide({{$i+$num1+$num2+$num3+$num4+2}})" style="width:100%" class="hover-shadow cursor">
+                                                  </div>
+                                              <?php } ?> 
+                                          </div>
+                                          <div class="alert alert-primary" style="margin:0 -20px 0;">6.ระบบส่งน้ำ </div>
+                                          <div class="row" id="showpixrow">
+                                              <?php for($i=0;$i<$num6;$i++){?>
+                                                  <div class="column" id="showpix">
+                                                    <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo6[$i]['file']}}" onclick="openModal();currentSlide({{$i+$num1+$num2+$num3+$num4+$num5+2}})" style="width:100%" class="hover-shadow cursor">
+                                                  </div>
+                                              <?php } ?> 
+                                          </div>
+
+                                          
+                                          
+                                      </div>
+
+                                      <!-- images -->
+                                      <div id="myModal" class="modal">
+                                          <span class="closeph cursor" onclick="closeModal()"> &times; </span>
+                                          <div class="modal-content" >
+                                              <?php   $num =$num1+$num2+$num3+$num4+$num5+$num6+1; ?>
+                                              <!-- 1 -->
+                                              <!-- map -->
+                                              <div class="mySlides" align="center">
+                                                <div class="numbertext"> 1 /{{$num}}</div>
+                                                  <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$expert['map']}}" width=60%>
+                                              </div>
+
+                                              <?php for($i=0;$i<$num1;$i++){?>
+                                                      <div class="mySlides">
+                                                          <div class="numbertext">{{$i+2}} / {{$num}}</div>
+                                                          <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo1[$i]['original']}}" class="pixpopup">
+                                                      </div>
+                                              <?php } ?>
+                                              <!-- 2 -->
+                                              <?php for($i=0;$i<$num2;$i++){?>
+                                                      <div class="mySlides">
+                                                          <div class="numbertext">{{$i+$num1+2}} / {{$num}}</div>
+                                                          <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo2[$i]['original']}} " class="pixpopup" >
+                                                      </div>
+                                              <?php } ?>
+                                              <!-- 3 -->
+                                              <?php for($i=0;$i<$num3;$i++){?>
+                                                      <div class="mySlides">
+                                                          <div class="numbertext">{{$i+$num1+$num2+2}} / {{$num}}</div>
+                                                          <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo3[$i]['original']}}" class="pixpopup" >
+                                                      </div>
+                                              <?php } ?>
+                                              <!-- 4 -->
+                                              <?php for($i=0;$i<$num4;$i++){?>
+                                                      <div class="mySlides">
+                                                          <div class="numbertext">{{$i+$num1+$num2+$num3+2}} / {{$num}}</div>
+                                                          <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo4[$i]['original']}}"class="pixpopup" >
+                                                      </div>
+                                              <?php } ?>
+                                              <!-- 5 -->
+                                              <?php for($i=0;$i<$num5;$i++){?>
+                                                      <div class="mySlides">
+                                                          <div class="numbertext">{{$i+$num1+$num2+$num3+$num4+2}} / {{$num}}</div>
+                                                          <img src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo5[$i]['original']}}" class="pixpopup">
+                                                      </div>
+                                              <?php } ?>
+                                              <!-- 6 -->
+                                              <?php for($i=0;$i<$num6;$i++){?>
+                                                      <div class="mySlides">
+                                                          <div class="numbertext">{{$i+$num1+$num2+$num3+$num4+$num5+2}} / {{$num}}</div>
+                                                          <img  src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo6[$i]['original']}}"  >
+                                                      </div>
+                                              <?php } ?>
+                                              
+                                              
+                                                  
+                                          
+                                              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                              <a class="nextph" onclick="plusSlides(1)">&#10095;</a>
+                                          
+                                              <div class="caption-container">
+                                              <p id="caption"></p>
+                                              </div>
+                                              <div class="caption-container" width=100%>
+                                                <div class="columnDown">
+                                                    <img class="demo cursor" src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$expert['map']}}" style="width:50%" onclick="currentSlide(1)" >
+                                                </div>
+                                                <!-- 1 -->
+                                                <?php for($i=0;$i<$num1;$i++){?>
+                                                    <div class="columnDown">
+                                                        <img class="demo cursor" src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo1[$i]['file']}}" style="width:100%" onclick="currentSlide({{$i+2}})" >
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- 2 -->
+                                                <?php for($i=0;$i<$num2;$i++){?>
+                                                    <div class="columnDown">
+                                                        <img class="demo cursor" src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo2[$i]['file']}}" style="width:100%" onclick="currentSlide({{$i+$num1+2}})" >
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- 3 -->
+                                                <?php for($i=0;$i<$num3;$i++){?>
+                                                    <div class="columnDown">
+                                                        <img class="demo cursor" src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo3[$i]['file']}}" style="width:100%" onclick="currentSlide({{$i+$num1+$num2+2}})" >
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- 4 -->
+                                                <?php for($i=0;$i<$num4;$i++){?>
+                                                    <div class="columnDown">
+                                                        <img class="demo cursor" src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo4[$i]['file']}}" style="width:100%" onclick="currentSlide({{$i+$num1+$num2+$num3+2}})" >
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- 5 -->
+                                                <?php for($i=0;$i<$num5;$i++){?>
+                                                    <div class="columnDown">
+                                                        <img class="demo cursor" src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo5[$i]['file']}}" style="width:100%" onclick="currentSlide({{$i+$num1+$num2+$num3+$num4+2}})" >
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- 6 -->
+                                                <?php for($i=0;$i<$num6;$i++){?>
+                                                    <div class="columnDown">
+                                                        <img class="demo cursor" src="http://watercenter.scmc.cmu.ac.th/weir/jang_basin/{{$photo6[$i]['file']}}" style="width:100%" onclick="currentSlide({{$i+$num1+$num2+$num3+$num4+$num5+2}})" >
+                                                    </div>
+                                                <?php } ?>
+
+                                                
+                                                  
+                                              </div>
+                                              
+                                          </div>
+                                      </div> 
+                            
+                                    
+                                  </div>
+                                  <!-- End Map show -->
+                                  <?php } ?>                     
                                 </div>
                               </div>
                             </div>
