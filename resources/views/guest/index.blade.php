@@ -215,6 +215,8 @@
                                                 <option value="เถิน">เถิน</option>
                                                 <option value="แจ้ห่ม">แจ้ห่ม</option>
                                                 <option value="งาว">งาว</option>
+                                                <option value="แม่เมาะ">แม่เมาะ</option>
+                                                <option value="แม่ทะ">แม่ทะ</option>
                                                                                              
                                           </select> 
                                       </h5>
@@ -487,7 +489,7 @@
       addPin(station4,3,mo);
       addPin(station5,4,mo);
       addPin(station6,5,mo);
-      addPin(station7,6,mo);
+      //addPin(station7,6,mo);
       addPin(station2,7,mo);
       addPin(station9,8,mo);
       addPin(station10,9,mo);
@@ -515,7 +517,6 @@
                 { label:" "+amp[3],layer: station4},
                 { label:" "+amp[4],layer: station5},
                 { label:" "+amp[5],layer: station6},
-                { label:" "+amp[6],layer: station7},
                 { label:" "+amp[8],layer: station9},
                 { label:" "+amp[9],layer: station10}
           ]

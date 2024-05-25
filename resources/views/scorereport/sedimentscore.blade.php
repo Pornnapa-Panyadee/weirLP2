@@ -178,15 +178,14 @@
                                           $jsonData = file_get_contents($apiUrl);
                                           $dataArray = json_decode($jsonData, true);
 
-                                          for ($i = 0; $i < count($dataArray); $i++) {                                          
-                                           if($i!=1){?> 
+                                          for ($i = 2; $i < count($dataArray); $i++) { ?> 
                                               <tr >
                                                 <td width=25%>{{$dataArray[$i]['amp']}}</td>
                                                 <td width=20% align="center">{{$dataArray[$i]['score_Y']}}</td>
                                                 <td width=20% align="center">{{$dataArray[$i]['score_O']}} </td>
                                                 <td width=20% align="center">{{$dataArray[$i]['score_R']}} </td>
                                               </tr>
-                                          <?php } }?>  
+                                          <?php  }?>  
                                           <tr>
                                             <td width=25%>เกาะคา</td>
                                             <td width=20% align="center">25</td>
