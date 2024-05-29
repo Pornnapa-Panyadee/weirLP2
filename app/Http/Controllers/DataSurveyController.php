@@ -267,6 +267,15 @@ class DataSurveyController extends Controller
              
              
         }
+        $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/getDataHomeTable';
+        $response = Http::get($apiUrl);
+        $data1 = $response->json();
+        for ($i=0;$i<count($data1[0]['data']);$i++){ 
+            $data[count($location)+$i] = $data1[0]['data'][$i];
+        }
+        // dd($data1[0]['data']);
+        
+        // dd($data);
         $district['name']=Location::getprovinceDistrict();
         // dd($district);
         return view('guest.index',compact('data','district'));      

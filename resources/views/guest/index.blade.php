@@ -270,29 +270,7 @@
                                           </td>
                                         </tr>
                                       <?php }?>
-                                      <?php
-                                        $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/getDataHomeTable';
-                                        $jsonData = file_get_contents($apiUrl);
-                                        $dataArray = json_decode($jsonData, true);
-
-                                        for ($i = 0; $i < count($dataArray[0]['data']); $i++) {?>
-                                          <tr>
-                                            <td align="center">{{$i+740}} </td>
-                                            <td>{{$dataArray[0]['data'][$i]['weir_code']}} </td>
-                                            <td>{{$dataArray[0]['data'][$i]['weir_name']}}/{{$dataArray[0]['data'][$i]['river']}} </td>
-                                            <td>{{$dataArray[0]['data'][$i]['weir_village']}}</td>
-                                            <td>{{$dataArray[0]['data'][$i]['weir_tumbol']}}  </td>
-                                            <td>{{$dataArray[0]['data'][$i]['weir_district']}}</td>
-                                            <td align="center" > 
-                                              <a href='{{ asset('/report/pdf') }}/{{$dataArray[0]['data'][$i]['weir_code']}}' class="btn waves-effect waves-light btn-facebook" target="_blank"><i class="feather icon-sidebar"></i>รายงาน</a>
-                                              <a href='{{ asset('/pdf') }}/{{$dataArray[0]['data'][$i]['weir_code']}}' class="btn waves-effect waves-light btn-dropbox" target="_blank"><i class="feather icon-eye"></i>แบบสำรวจ</a>
-                                              <a href='{{ asset('/photo') }}/{{$dataArray[0]['data'][$i]['weir_code']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
-                                              <a href='{{ asset('/map') }}/{{$dataArray[0]['data'][$i]['weir_code']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>แผนที่</a>
-                                            
-                                              
-                                            </td>
-                                          </tr>
-                                        <?php }?>  
+                                        
                                       </tbody>
                                     </table>
                                     
