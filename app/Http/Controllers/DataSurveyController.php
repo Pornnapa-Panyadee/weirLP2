@@ -247,7 +247,8 @@ class DataSurveyController extends Controller
                 $location = WeirLocation::select('*')->get();
         }
         
-        for ($i=0;$i<count($location);$i++){ 
+        if(empty($request->amp)){
+            for ($i=0;$i<count($location);$i++){ 
             
                 $weir = WeirSurvey::select('weir_id','weir_code','weir_name','river_id','user','created_at')->where('weir_location_id',$location[$i]->weir_location_id)->get();
                 $river = River::select('river_name')->where('river_id',$weir[0]->river_id)->get();
@@ -264,15 +265,47 @@ class DataSurveyController extends Controller
                     'river' => $river[0]->river_name,
                     'date'=>$weir[0]->created_at
                 ];     
-             
-             
+            }
+            $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/getDataHomeTable';
+            $response = Http::get($apiUrl);
+            $data1 = $response->json();
+            for ($i=0;$i<count($data1[0]['data']);$i++){ 
+                $data[count($location)+$i] = $data1[0]['data'][$i];
+            }
+
+        }elseif($request->amp=="แม่เมาะ" || $request->amp=="แม่ทะ"){
+            if(!empty($request->tumbol)){
+                $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/getDataHomeTable/'.$request->amp.'/'.$request->tumbol;
+            }else{
+                $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/getDataHomeTable/'.$request->amp.'/0';
+            }
+            $response = Http::get($apiUrl);
+            $data1 = $response->json();
+            for ($i=0;$i<count($data1[0]['data']);$i++){ 
+                $data[count($location)+$i] = $data1[0]['data'][$i];
+            }
+        }else{
+            for ($i=0;$i<count($location);$i++){ 
+            
+                $weir = WeirSurvey::select('weir_id','weir_code','weir_name','river_id','user','created_at')->where('weir_location_id',$location[$i]->weir_location_id)->get();
+                $river = River::select('river_name')->where('river_id',$weir[0]->river_id)->get();
+                $latlong=json_decode($location[$i]->latlong);
+                $data[] = [
+                    'weir_id'=> $weir[0]->weir_id,
+                    'weir_code'=> $weir[0]->weir_code,
+                    'weir_name'=> $weir[0]->weir_name,
+                    'lat'=>$latlong->x,
+                    'long'=>$latlong->y,
+                    'weir_village'=> $location[$i]->weir_village,
+                    'weir_tumbol'=> $location[$i]->weir_tumbol,
+                    'weir_district'=> $location[$i]->weir_district,
+                    'river' => $river[0]->river_name,
+                    'date'=>$weir[0]->created_at
+                ];     
+            }
+
         }
-        $apiUrl = 'https://watercenter.scmc.cmu.ac.th/weir/jang_basin/api/getDataHomeTable';
-        $response = Http::get($apiUrl);
-        $data1 = $response->json();
-        for ($i=0;$i<count($data1[0]['data']);$i++){ 
-            $data[count($location)+$i] = $data1[0]['data'][$i];
-        }
+        
         // dd($data1[0]['data']);
         
         // dd($data);
