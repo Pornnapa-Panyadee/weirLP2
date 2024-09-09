@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8">
@@ -23,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/form/style1.css')}}">
 
     <!-- leaflet -->
-    
+
     <link rel="stylesheet" href="{{ asset('css/form/leaflet.css')}}" crossorigin=""/>
     <!-- <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script> -->
     <script src="{{ asset('js/leaflet-omnivore.min.js')}}"  crossorigin=""></script>
@@ -31,7 +30,6 @@
 
     <style type="text/css">
       #map{
-
 			  font-family: Mitr, sans-serif;
 			  height: 620px;
 			  display: block;
@@ -98,17 +96,8 @@
     </style>
 
 
-  </head>
+	@@ -110,178 +58,98 @@
 
-  <body class="horizontal-icon-fixed" >
-    @yield('content')
-    <div class="loader-bg">
-        <div class="loader-bar"></div>
-    </div>
-
-    <div id="pcoded" class="pcoded" >
-      <div class="pcoded-overlay-box"></div>
-      
       <div class="pcoded-container navbar-wrapper">
         @include('menu.header')
 
@@ -143,7 +132,7 @@
                                 <center><img  src="{{ asset('images/icon/refmap1.png') }}" width=85% ></center>
                               </div>
                                <!-- End Map show -->
-                                                          
+
                             </div>
                           </div>
                         </div>
@@ -194,7 +183,7 @@
                               </div>
                         </div>
                       </div>
-                      
+
                        <!-- table -->
                       <div class="card">
                         <div class="card-block">
@@ -219,7 +208,7 @@
                                                 <option value="งาว">งาว</option>
                                                 <option value="แม่เมาะ">แม่เมาะ</option>
                                                 <option value="แม่ทะ">แม่ทะ</option>
-                                                                                             
+
                                           </select> 
                                       </h5>
                                     </div>
@@ -233,7 +222,7 @@
                                     <div class="col-md-8 col-xl-1">
                                       <button type="submit" class="btn btn-outline-dark "  style="float: right; padding:8px;"> ค้นหา </button>
                                     </div>
-                                                                  
+
                                   </div>
                                 </div>
                                 </form>
@@ -268,18 +257,18 @@
                                             <a href='{{ asset('/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-dropbox" target="_blank"><i class="feather icon-eye"></i>แบบสำรวจ</a>
                                             <a href='{{ asset('/photo') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
                                             <a href='{{ asset('/map') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>แผนที่</a>
-                                            
+
                                           </td>
                                         </tr>
                                       <?php }?>
-                                        
+
                                       </tbody>
                                     </table>
-                                    
+
                                   </div>
                                 </div>    
                             </div>
-                                                                                    
+
                           </div>
                         </div>
                       </div>
@@ -287,35 +276,13 @@
                     </div>
                   </div>
 
-                  
-                </div>
-              </div>
-
-             
-            </div>  
-          </div>
-            @include('menu.foot')
-          </div>
-          
-        </div>
-
-      </div>
-    </div>
-    
-    
-    <script src="{{ asset('js/form/jquery.min.js')}}"></script>
-    <script src="{{ asset('js/form/jquery-ui.min.js')}}"></script>
-    <script src="{{ asset('js/form/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('js/form/jquery-i18next.min.js')}}" ></script>
-    <script src="{{ asset('js/form/pcoded.min.js')}}" ></script>
-    <script src="{{ asset('js/form/menu-hori-fixed.js')}}" ></script>
-    <script src="{{ asset('js/form/jquery.mcustomscrollbar.concat.min.js')}}" ></script>
+	@@ -311,200 +179,4 @@
     <script src="{{ asset('js/form/script.js')}}"></script>
     <script async  src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    
+
     <script src= "{{ asset('js/chooselocationReport.js') }}"></script>
     <script src="{{ asset('js/form/rocket-loader.min.js')}}"></script>
-  
+
     <script src="{{ asset('js/form/jquery.datatables.min.js')}}" ></script>
     <script src="{{ asset('js/form/datatables.buttons.min.js')}}" ></script>
 
@@ -334,10 +301,10 @@
 
     <script src= "{{ asset('js/form/script.js') }}"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" ></script>
-  
+
     <script src="{{ asset('js/form/rocket-loader.min.js')}}" data-cf-settings="ce2668daaac54a74e9f6cdff-|49" defer=""></script>
 
-    
+
     <!-- Map script -->
     <link rel="stylesheet" href="{{ asset('css/L.Control.Layers.Tree.css')}}" crossorigin=""/>
     <script src="{{ asset('/js/L.Control.Layers.Tree.js')}}"></script>
@@ -354,7 +321,6 @@
       var station8 = new L.LayerGroup();
       var station9 = new L.LayerGroup();
       var station10 = new L.LayerGroup();
-
       var rid = new L.LayerGroup();
       var ridNo = new L.LayerGroup();
       var dwr = new L.LayerGroup();
@@ -390,7 +356,6 @@
           iconAnchor: [20, 40],
           popupAnchor: [0, 0]
         });
-
       var pinMO = L.icon({
           iconUrl: '{{ asset('images/icon/pin19.png') }}',
           iconRetinaUrl:'{{ asset('images/icon/pin19.png') }}',
@@ -409,7 +374,6 @@
         }
       }
       function addPin(ampName,i,mo){
-
         if(i<6){
           $.getJSON("{{ asset('form/getDataSurvey') }}/"+amp[i], 
           function (data){
@@ -452,7 +416,6 @@
         }
                 
       }
-
       
       var mx = window.matchMedia("(max-width: 700px)");
       if(mx.matches){
@@ -473,7 +436,6 @@
       addPin(station2,7,mo);
       addPin(station9,8,mo);
       addPin(station10,9,mo);
-
       var baseTree = {
           label: 'BaseLayers',
           noShow: true,
@@ -481,11 +443,8 @@
                        {label: ' แผนที่ภาพถ่ายผ่านดาวเทียม (Satellite)', layer: osmBw},
           ]
         };
-
-
         var ctl = L.control.layers.tree(baseTree, null);
         ctl.addTo(map).collapseTree().expandSelected();
-
     
       var overlays = [{
           label: ' ข้อมูลฝายรายอำเภอ',
@@ -505,7 +464,7 @@
         ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
     </script>
 
-  
+
     <!-- End Map  -->
   </body>
 
