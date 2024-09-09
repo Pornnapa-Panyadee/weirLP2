@@ -9,14 +9,14 @@
 /******/ 		if (installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
       /******/
-    }
+}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
       /******/
-    };
+};
 /******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
@@ -27,7 +27,7 @@
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
     /******/
-  }
+}
 /******/
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
@@ -41,19 +41,19 @@
 /******/ 		if (!__webpack_require__.o(exports, name)) {
 /******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
       /******/
-    }
+}
     /******/
-  };
+};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function (exports) {
 /******/ 		if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
       /******/
-    }
+}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
     /******/
-  };
+};
 /******/
 /******/ 	// create a fake namespace object
 /******/ 	// mode & 1: value is a module id, require it
@@ -70,7 +70,7 @@
 /******/ 		if (mode & 2 && typeof value != 'string') for (var key in value) __webpack_require__.d(ns, key, function (key) { return value[key]; }.bind(null, key));
 /******/ 		return ns;
     /******/
-  };
+};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function (module) {
@@ -80,7 +80,7 @@
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
     /******/
-  };
+};
 /******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function (object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
@@ -106,7 +106,7 @@
       module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/lib/axios.js");
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/adapters/xhr.js":
 /*!************************************************!*\
@@ -281,7 +281,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/axios.js":
 /*!*****************************************!*\
@@ -346,7 +346,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/cancel/Cancel.js":
 /*!*************************************************!*\
@@ -378,7 +378,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/cancel/CancelToken.js":
 /*!******************************************************!*\
@@ -448,7 +448,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/cancel/isCancel.js":
 /*!***************************************************!*\
@@ -466,7 +466,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/core/Axios.js":
 /*!**********************************************!*\
@@ -558,7 +558,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/core/InterceptorManager.js":
 /*!***********************************************************!*\
@@ -623,7 +623,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/core/createError.js":
 /*!****************************************************!*\
@@ -654,7 +654,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/core/dispatchRequest.js":
 /*!********************************************************!*\
@@ -753,7 +753,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/core/enhanceError.js":
 /*!*****************************************************!*\
@@ -787,7 +787,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/core/settle.js":
 /*!***********************************************!*\
@@ -826,7 +826,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/core/transformData.js":
 /*!******************************************************!*\
@@ -859,7 +859,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/defaults.js":
 /*!********************************************!*\
@@ -967,10 +967,10 @@
         module.exports = defaults;
 
         /* WEBPACK VAR INJECTION */
-      }.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
+}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/bind.js":
 /*!************************************************!*\
@@ -994,7 +994,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/buildURL.js":
 /*!****************************************************!*\
@@ -1073,7 +1073,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/combineURLs.js":
 /*!*******************************************************!*\
@@ -1100,7 +1100,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/cookies.js":
 /*!***************************************************!*\
@@ -1166,7 +1166,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/isAbsoluteURL.js":
 /*!*********************************************************!*\
@@ -1193,7 +1193,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/isURLSameOrigin.js":
 /*!***********************************************************!*\
@@ -1274,7 +1274,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/normalizeHeaderName.js":
 /*!***************************************************************!*\
@@ -1299,7 +1299,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/parseHeaders.js":
 /*!********************************************************!*\
@@ -1365,7 +1365,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/helpers/spread.js":
 /*!**************************************************!*\
@@ -1405,7 +1405,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/axios/lib/utils.js":
 /*!*****************************************!*\
@@ -1721,7 +1721,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
@@ -1755,7 +1755,7 @@
       });
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RiverSelectionComponent.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************!*\
@@ -1788,7 +1788,7 @@
       });
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
@@ -6235,7 +6235,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/is-buffer/index.js":
 /*!*****************************************!*\
@@ -6258,7 +6258,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
@@ -16870,7 +16870,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
@@ -33981,10 +33981,10 @@
         }.call(this));
 
         /* WEBPACK VAR INJECTION */
-      }.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/popper.js/dist/esm/popper.js":
 /*!***************************************************!*\
@@ -36601,10 +36601,10 @@
         //# sourceMappingURL=popper.js.map
 
         /* WEBPACK VAR INJECTION */
-      }.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
@@ -36800,7 +36800,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/setimmediate/setImmediate.js":
 /*!***************************************************!*\
@@ -36998,10 +36998,10 @@
         }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
         /* WEBPACK VAR INJECTION */
-      }.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
+}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
@@ -37076,10 +37076,10 @@
           (this && this.clearImmediate);
 
         /* WEBPACK VAR INJECTION */
-      }.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
@@ -37127,7 +37127,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RiverSelectionComponent.vue?vue&type=template&id=a389863c&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
@@ -37184,7 +37184,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
@@ -37292,7 +37292,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/vue/dist/vue.common.dev.js":
 /*!*************************************************!*\
@@ -48929,7 +48929,7 @@
 
 
 
-        // function createFunction(code, errors) {
+        // function createFunction (code, errors) {
         //   try {
         //     return new Function(code)
         //   } catch (err) {
@@ -48938,105 +48938,105 @@
         //   }
         // }
 
-        // function createCompileToFunctionFn(compile) {
-        //   var cache = Object.create(null);
+        function createCompileToFunctionFn(compile) {
+          var cache = Object.create(null);
 
-        //   return function compileToFunctions(
-        //     template,
-        //     options,
-        //     vm
-        //   ) {
-        //     options = extend({}, options);
-        //     var warn$$1 = options.warn || warn;
-        //     delete options.warn;
+          return function compileToFunctions(
+            template,
+            options,
+            vm
+          ) {
+            options = extend({}, options);
+            var warn$$1 = options.warn || warn;
+            delete options.warn;
 
-        //     /* istanbul ignore if */
-        //     {
-        //       // detect possible CSP restriction
-        //       try {
-        //         new Function('return 1');
-        //       } catch (e) {
-        //         if (e.toString().match(/unsafe-eval|CSP/)) {
-        //           warn$$1(
-        //             'It seems you are using the standalone build of Vue.js in an ' +
-        //             'environment with Content Security Policy that prohibits unsafe-eval. ' +
-        //             'The template compiler cannot work in this environment. Consider ' +
-        //             'relaxing the policy to allow unsafe-eval or pre-compiling your ' +
-        //             'templates into render functions.'
-        //           );
-        //         }
-        //       }
-        //     }
+            /* istanbul ignore if */
+            // {
+            //   // detect possible CSP restriction
+            //   try {
+            //     new Function('return 1');
+            //   } catch (e) {
+            //     if (e.toString().match(/unsafe-eval|CSP/)) {
+            //       warn$$1(
+            //         'It seems you are using the standalone build of Vue.js in an ' +
+            //         'environment with Content Security Policy that prohibits unsafe-eval. ' +
+            //         'The template compiler cannot work in this environment. Consider ' +
+            //         'relaxing the policy to allow unsafe-eval or pre-compiling your ' +
+            //         'templates into render functions.'
+            //       );
+            //     }
+            //   }
+            // }
 
-        //     // check cache
-        //     var key = options.delimiters
-        //       ? String(options.delimiters) + template
-        //       : template;
-        //     if (cache[key]) {
-        //       return cache[key]
-        //     }
+            // check cache
+            var key = options.delimiters
+              ? String(options.delimiters) + template
+              : template;
+            if (cache[key]) {
+              return cache[key]
+            }
 
-        //     // compile
-        //     var compiled = compile(template, options);
+            // compile
+            var compiled = compile(template, options);
 
-        //     // check compilation errors/tips
-        //     {
-        //       if (compiled.errors && compiled.errors.length) {
-        //         if (options.outputSourceRange) {
-        //           compiled.errors.forEach(function (e) {
-        //             warn$$1(
-        //               "Error compiling template:\n\n" + (e.msg) + "\n\n" +
-        //               generateCodeFrame(template, e.start, e.end),
-        //               vm
-        //             );
-        //           });
-        //         } else {
-        //           warn$$1(
-        //             "Error compiling template:\n\n" + template + "\n\n" +
-        //             compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
-        //             vm
-        //           );
-        //         }
-        //       }
-        //       if (compiled.tips && compiled.tips.length) {
-        //         if (options.outputSourceRange) {
-        //           compiled.tips.forEach(function (e) { return tip(e.msg, vm); });
-        //         } else {
-        //           compiled.tips.forEach(function (msg) { return tip(msg, vm); });
-        //         }
-        //       }
-        //     }
+            // check compilation errors/tips
+            {
+              if (compiled.errors && compiled.errors.length) {
+                if (options.outputSourceRange) {
+                  compiled.errors.forEach(function (e) {
+                    warn$$1(
+                      "Error compiling template:\n\n" + (e.msg) + "\n\n" +
+                      generateCodeFrame(template, e.start, e.end),
+                      vm
+                    );
+                  });
+                } else {
+                  warn$$1(
+                    "Error compiling template:\n\n" + template + "\n\n" +
+                    compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
+                    vm
+                  );
+                }
+              }
+              if (compiled.tips && compiled.tips.length) {
+                if (options.outputSourceRange) {
+                  compiled.tips.forEach(function (e) { return tip(e.msg, vm); });
+                } else {
+                  compiled.tips.forEach(function (msg) { return tip(msg, vm); });
+                }
+              }
+            }
 
-        //     // turn code into functions
-        //     var res = {};
-        //     var fnGenErrors = [];
-        //     res.render = createFunction(compiled.render, fnGenErrors);
-        //     res.staticRenderFns = compiled.staticRenderFns.map(function (code) {
-        //       return createFunction(code, fnGenErrors)
-        //     });
+            // turn code into functions
+            var res = {};
+            var fnGenErrors = [];
+            res.render = createFunction(compiled.render, fnGenErrors);
+            res.staticRenderFns = compiled.staticRenderFns.map(function (code) {
+              return createFunction(code, fnGenErrors)
+            });
 
-        //     // check function generation errors.
-        //     // this should only happen if there is a bug in the compiler itself.
-        //     // mostly for codegen development use
-        //     /* istanbul ignore if */
-        //     {
-        //       if ((!compiled.errors || !compiled.errors.length) && fnGenErrors.length) {
-        //         warn$$1(
-        //           "Failed to generate render function:\n\n" +
-        //           fnGenErrors.map(function (ref) {
-        //             var err = ref.err;
-        //             var code = ref.code;
+            // check function generation errors.
+            // this should only happen if there is a bug in the compiler itself.
+            // mostly for codegen development use
+            /* istanbul ignore if */
+            {
+              if ((!compiled.errors || !compiled.errors.length) && fnGenErrors.length) {
+                warn$$1(
+                  "Failed to generate render function:\n\n" +
+                  fnGenErrors.map(function (ref) {
+                    var err = ref.err;
+                    var code = ref.code;
 
-        //             return ((err.toString()) + " in\n\n" + code + "\n");
-        //           }).join('\n'),
-        //           vm
-        //         );
-        //       }
-        //     }
+                    return ((err.toString()) + " in\n\n" + code + "\n");
+                  }).join('\n'),
+                  vm
+                );
+              }
+            }
 
-        //     return (cache[key] = res)
-        //   }
-        // }
+            return (cache[key] = res)
+          }
+        }
 
         /*  */
 
@@ -49248,10 +49248,10 @@
         module.exports = Vue;
 
         /* WEBPACK VAR INJECTION */
-      }.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/vue/dist/vue.common.js":
 /*!*********************************************!*\
@@ -49266,7 +49266,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
@@ -49298,7 +49298,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./node_modules/webpack/buildin/module.js":
 /*!***********************************!*\
@@ -49332,7 +49332,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
@@ -49372,7 +49372,7 @@
       });
 
       /***/
-    }),
+}),
 
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
@@ -49431,7 +49431,7 @@
       // });
 
       /***/
-    }),
+}),
 
 /***/ "./resources/js/components/ExampleComponent.vue":
 /*!******************************************************!*\
@@ -49469,7 +49469,7 @@
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
       /***/
-    }),
+}),
 
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
@@ -49484,7 +49484,7 @@
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
       /***/
-    }),
+}),
 
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*************************************************************************************!*\
@@ -49503,7 +49503,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./resources/js/components/RiverSelectionComponent.vue":
 /*!*************************************************************!*\
@@ -49542,7 +49542,7 @@
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
       /***/
-    }),
+}),
 
 /***/ "./resources/js/components/RiverSelectionComponent.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************!*\
@@ -49557,7 +49557,7 @@
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RiverSelectionComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
       /***/
-    }),
+}),
 
 /***/ "./resources/js/components/RiverSelectionComponent.vue?vue&type=template&id=a389863c&":
 /*!********************************************************************************************!*\
@@ -49576,7 +49576,7 @@
 
 
       /***/
-    }),
+}),
 
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
@@ -49588,7 +49588,7 @@
       // removed by extract-text-webpack-plugin
 
       /***/
-    }),
+}),
 
 /***/ 0:
 /*!*************************************************************!*\
@@ -49602,7 +49602,7 @@
 
 
       /***/
-    })
+})
 
   /******/
 });
