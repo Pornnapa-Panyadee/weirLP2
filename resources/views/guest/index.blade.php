@@ -25,7 +25,8 @@
     <!-- leaflet -->
     
     <link rel="stylesheet" href="{{ asset('css/form/leaflet.css')}}" crossorigin=""/>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+    <!-- <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script> -->
+    <script src="{{ asset('js/leaflet-omnivore.min.js')}}"  crossorigin=""></script>
     <script src="{{ asset('js/leaflet-src.js')}}"  crossorigin=""></script>
 
     <style type="text/css">
@@ -201,7 +202,8 @@
                             <div class="col-lg-12 col-xl-12">
                               <div class="sub-title"><h4>ตารางแสดงรายละเอียดการตรวจสอบฝาย</h4> </div>
                               <!-- choose Amp -->
-                                <form id="amp" name="amp" action="/weir/lampang/#tableData" method="get"> 
+                                <!-- <form id="amp" name="amp" action="/weir/lampang/#tableData" method="get">  -->
+                                <form id="amp" name="amp" action="#tableData" method="get"> 
                                 <div class="find">
                                   <div class="row justify-content-center" >
                                     <div class="col-md-8 col-xl-6"></div>
