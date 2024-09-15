@@ -84,6 +84,11 @@
                                                                                                 <option value="แม่เมาะ">แม่เมาะ</option> 
                                                                                                 <option value="แม่ทะ">แม่ทะ</option> 
                                                                                                 <option value="เกาะคา1">เกาะคา (กฟภ) *ไม่ต้องเลือกตำบล</option>
+                                                                                                <option value="แม่พริก">แม่พริก</option>
+                                                                                                <option value="เมืองปาน">เมืองปาน</option>
+                                                                                                <option value="เมืองลำปาง">เมืองลำปาง</option>
+                                                                                                <option value="วังเหนือ">วังเหนือ</option>
+                                                                                                <option value="เสริมงาม">เสริมงาม</option>
                                                                                             </select> 
                                                                                             <span class="messages"></span>
                                                                                         </td>

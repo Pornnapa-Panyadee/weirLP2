@@ -219,7 +219,12 @@
                                                 <option value="งาว">งาว</option>
                                                 <option value="แม่เมาะ">แม่เมาะ</option>
                                                 <option value="แม่ทะ">แม่ทะ</option>
-                                                                                             
+                                                <option value="แม่พริก">แม่พริก</option>
+                                                <option value="เมืองปาน">เมืองปาน</option>
+                                                <option value="เมืองลำปาง">เมืองลำปาง</option>
+                                                <option value="วังเหนือ">วังเหนือ</option>
+                                                <option value="เสริมงาม">เสริมงาม</option>
+                                                
                                           </select> 
                                       </h5>
                                     </div>
@@ -354,6 +359,10 @@
       var station8 = new L.LayerGroup();
       var station9 = new L.LayerGroup();
       var station10 = new L.LayerGroup();
+      var station11 = new L.LayerGroup();
+      var station12 = new L.LayerGroup();
+      var station13 = new L.LayerGroup();
+      var station14 = new L.LayerGroup();
 
       var rid = new L.LayerGroup();
       var ridNo = new L.LayerGroup();
@@ -369,7 +378,7 @@
           osmBw = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
                 maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
       var map = L.map('map', {
-          layers: [osm,station1,station2,station3,station4,station5,station6,station7,station8,station9,station10,borders],
+          layers: [osm,station1,station2,station3,station4,station5,station6,station8,station9,station10,station11,station12,station13,station14,borders],
           center: [x,y],
           zoom: 8,
         });
@@ -399,7 +408,7 @@
           popupAnchor: [0, 0]
         });
            
-     var amp=["ห้างฉัตร", "เกาะคา", "สบปราบ","เถิน","แจ้ห่ม","งาว","เมืองลำปาง","เกาะคา","แม่ทะ","แม่เมาะ"];    
+     var amp=["ห้างฉัตร", "เกาะคา", "สบปราบ","เถิน","แจ้ห่ม","งาว","เกาะคา","แม่ทะ","แม่เมาะ","แม่พริก","เมืองปาน","เมืองลำปาง","วังเหนือ","เสริมงาม"];    
       
       function checkname(name){
         if(name!=null){
@@ -410,7 +419,7 @@
       }
       function addPin(ampName,i,mo){
 
-        if(i<6){
+        if(i<6 || i>8){
           $.getJSON("{{ asset('form/getDataSurvey') }}/"+amp[i], 
           function (data){
             // alert (data[0].lat);
@@ -473,6 +482,10 @@
       addPin(station2,7,mo);
       addPin(station9,8,mo);
       addPin(station10,9,mo);
+      addPin(station11,10,mo);
+      addPin(station12,11,mo);
+      addPin(station13,12,mo);
+      addPin(station14,13,mo);
 
       var baseTree = {
           label: 'BaseLayers',
@@ -497,8 +510,13 @@
                 { label:" "+amp[3],layer: station4},
                 { label:" "+amp[4],layer: station5},
                 { label:" "+amp[5],layer: station6},
+                { label:" "+amp[7],layer: station8},
                 { label:" "+amp[8],layer: station9},
-                { label:" "+amp[9],layer: station10}
+                { label:" "+amp[9],layer: station10},
+                { label:" "+amp[10],layer: station11},
+                { label:" "+amp[11],layer: station12},
+                { label:" "+amp[12],layer: station13},
+                { label:" "+amp[13],layer: station14}
           ]
         }];
         

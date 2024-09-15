@@ -179,6 +179,11 @@
                                                                                 <option value="เถิน">เถิน</option>
                                                                                 <option value="แจ้ห่ม">แจ้ห่ม</option>
                                                                                 <option value="งาว">งาว</option>
+                                                                                <option value="แม่พริก">แม่พริก</option>
+                                                                                <option value="เมืองปาน">เมืองปาน</option>
+                                                                                <option value="เมืองลำปาง">เมืองลำปาง</option>
+                                                                                <option value="วังเหนือ">วังเหนือ</option>
+                                                                                <option value="เสริมงาม">เสริมงาม</option>
                                                                             </select> 
                                                                         </td>
                                                                     </tr>

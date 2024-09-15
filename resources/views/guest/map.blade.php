@@ -240,7 +240,7 @@
       
       function addPin(ampName,i,mo){
         
-        if(amp=="ห้างฉัตร" || amp=="เกาะคา"|| amp=="สบปราบ" || amp=="เถิน" || amp=="แจ้ห่ม" || amp=="งาว"){
+        if(amp=="ห้างฉัตร" || amp=="เกาะคา"|| amp=="สบปราบ" || amp=="เถิน" || amp=="แจ้ห่ม" || amp=="งาว"|| amp=="แม่พริก"|| amp=="เมืองปาน"|| amp=="เมืองลำปาง"|| amp=="เสริมงาม"){
           $.getJSON("{{ asset('form/getDataSurvey')}}/"+amp, 
           function (data){
             // alert (data[0].lat);
