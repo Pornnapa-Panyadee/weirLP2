@@ -54,6 +54,26 @@
             </li>
             <li class="pcoded-hasmenu">
                 <a  href="javascript:void(0)" >
+                <span class="pcoded-mtext"><i class="fa fa-map-pin"></i> ปรับปรุง/เพิ่มเติมสภาพฝาย </span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class="">
+                        <a href="https://forms.gle/mjPJi6VQjQSEt2ro6" target=_blank>
+                          <span class="pcoded-mtext">ฟอร์มสำรวจ</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{{ asset('pdf/manual_prepare_weir_LP.pdf') }}" target=_blank>
+                          <span class="pcoded-mtext">คู่มือการกรอกแบบสำรวจ</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+
+            <li class="pcoded-hasmenu">
+                <a  href="javascript:void(0)" >
                 <span class="pcoded-mtext"><i class="fa fa-sticky-note-o"></i> เกี่ยวกับโครงการ </span>
                 </a>
                 <ul class="pcoded-submenu">

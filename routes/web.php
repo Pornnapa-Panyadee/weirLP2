@@ -37,7 +37,8 @@ Route::get('/remove/{id}', 'App\Http\Controllers\FormsController@formDelete');
 
 // Route::get('/', function () { return view('guest.index');})->name('form');
 Route::get('/', 'App\Http\Controllers\DataSurveyController@getDataHomeTable');
-Route::get('/test', 'App\Http\Controllers\DataSurveyController@getDataHomeTabletest')->name('data');
+Route::get('/testh', 'App\Http\Controllers\DataSurveyController@getDataHomeTabletesth');
+// Route::get('/test', 'App\Http\Controllers\DataSurveyController@getDataHomeTabletest')->name('data');
 // Route::get('/list', function () { return view('form.list');})->name('list');
 Route::get('/list', 'App\Http\Controllers\DataSurveyController@getDatatoTable')->name('list');
 Route::get('/list/expert', 'App\Http\Controllers\DataSurveyController@getDatatoTableExpert')->name('expert.list');
