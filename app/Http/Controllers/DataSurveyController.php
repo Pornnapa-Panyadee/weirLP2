@@ -237,6 +237,22 @@ class DataSurveyController extends Controller
     public function getDataHomeTable(Request $request) {
         $data=[];
         $dataUser=[];
+        $screenWidth = $this->calculateScreenWidth();
+        if($screenWidth<= 768){
+            if($request->amp=="ห้างฉัตร" || empty($request->amp)){
+                $request->amp="ห้างฉัตร";
+            }elseif($request->amp=="sum"){
+                $request->amp=empty($request->amp);
+            }else{
+                $request->amp=$request->amp;
+            }
+        }else{
+            if($request->amp=="sum" || empty($request->amp)){
+                $request->amp=NULL;
+            }else{
+                $request->amp=$request->amp;
+            }
+        }
         if(!empty($request->amp)){
             if(!empty($request->tumbol)){
                 $location = WeirLocation::select('*')->where('weir_district',$request->amp)->where('weir_tumbol',$request->tumbol)->get();
@@ -319,14 +335,23 @@ class DataSurveyController extends Controller
     public function getDataHomeTabletesth(Request $request) {
         $data=[];
         $dataUser=[];
-        // dd($request->amp);
-        if($request->amp=="ห้างฉัตร" || empty($request->amp)){
-            $request->amp="ห้างฉัตร";
-        }elseif($request->amp=="sum"){
-            $request->amp=empty($request->amp);
+        $screenWidth = $this->calculateScreenWidth();
+        if($screenWidth<= 768){
+            if($request->amp=="ห้างฉัตร" || empty($request->amp)){
+                $request->amp="ห้างฉัตร";
+            }elseif($request->amp=="sum"){
+                $request->amp=empty($request->amp);
+            }else{
+                $request->amp=$request->amp;
+            }
         }else{
-            $request->amp=empty($request->amp);
+            if($request->amp=="sum" || empty($request->amp)){
+                $request->amp=NULL;
+            }else{
+                $request->amp=$request->amp;
+            }
         }
+        
         
         if(!empty($request->amp)){
             if(!empty($request->tumbol)){
@@ -578,5 +603,26 @@ class DataSurveyController extends Controller
 
 
 
+    }
+
+    // ฟังก์ชันคำนวณ screenWidth
+    private function calculateScreenWidth()
+    {
+        // ตรวจสอบว่าเป็นมือถือหรือไม่
+        if ($this->isMobile()) {
+            return 480; // กำหนดให้มือถือมี screenWidth = 480px
+        } else {
+            return 1024; // กำหนดให้โน้ตบุ๊คมี screenWidth = 1024px
+        }
+    }
+
+    // ฟังก์ชันตรวจสอบว่าเป็นมือถือ
+    private function isMobile()
+    {
+        // ตรวจสอบ User-Agent
+        $userAgent = request()->header('User-Agent');
+
+        // ตรวจสอบว่า User-Agent มีคำว่า 'Mobile' หรือไม่
+        return preg_match('/Mobile|Android|iPhone|iPad/', $userAgent);
     }
 }

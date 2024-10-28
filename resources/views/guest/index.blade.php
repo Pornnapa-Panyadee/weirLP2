@@ -201,23 +201,7 @@
                                     <div class="col-md-8 col-xl-6"></div>
                                     <div class="col-md-8 col-xl-2">
                                       <h5 class="card-title">
-                                          <select id='weir_district' name='amp' id="name">
-                                                <option value="sum">- - เลือกอำเภอ - -</option>
-                                                <option value="ห้างฉัตร">ห้างฉัตร</option>
-                                                <option value="เกาะคา">เกาะคา</option>
-                                                <option value="สบปราบ">สบปราบ</option>
-                                                <option value="เถิน">เถิน</option>
-                                                <option value="แจ้ห่ม">แจ้ห่ม</option>
-                                                <option value="งาว">งาว</option>
-                                                <option value="แม่เมาะ">แม่เมาะ</option>
-                                                <option value="แม่ทะ">แม่ทะ</option>
-                                                <option value="แม่พริก">แม่พริก</option>
-                                                <option value="เมืองปาน">เมืองปาน</option>
-                                                <option value="เมืองลำปาง">เมืองลำปาง</option>
-                                                <option value="วังเหนือ">วังเหนือ</option>
-                                                <option value="เสริมงาม">เสริมงาม</option>
-                                                
-                                          </select> 
+                                        <div id="selectContainer"></div>
                                       </h5>
                                     </div>
                                     <div class="col-md-8 col-xl-2">
@@ -509,6 +493,60 @@
         }];
         
         ctl.setOverlayTree(overlays).collapseTree(true).expandSelected(true);
+    </script>
+
+    <script>
+        function createSelect() {
+          const container = document.getElementById('selectContainer');
+          container.innerHTML = ''; // ล้างเนื้อหาก่อนหน้า
+
+          const isMobile = window.innerWidth <= 768; // เช็คว่าขนาดหน้าจอเป็นมือถือหรือไม่
+          const select = document.createElement('select');
+          select.id = 'weir_district';
+          select.name = 'amp';
+
+          // รายการอำเภอทั้งหมด
+          const districtList = [
+              "ห้างฉัตร", "เกาะคา", "สบปราบ", "เถิน", "แจ้ห่ม",
+              "งาว", "แม่เมาะ", "แม่ทะ", "แม่พริก", "เมืองปาน",
+              "เมืองลำปาง", "วังเหนือ", "เสริมงาม"
+          ];
+
+          let options = '';
+
+          // เช็คว่าถ้าเป็นมือถือให้แสดงรายการอำเภอทั้งหมดโดยเลือก 'ห้างฉัตร' เป็นค่าเริ่มต้น
+          if (isMobile) {
+              districtList.forEach(district => {
+                  options += `<option value="${district}">${district}</option>`;
+              });
+              options += '<option value="sum">ทั้งหมด</option>';
+              select.value = 'ห้างฉัตร'; // ตั้งค่าเริ่มต้นเป็น "ห้างฉัตร"
+          } else {
+              // ถ้าไม่ใช่มือถือให้มีค่า "- - เลือกอำเภอ - -" เป็นค่าเริ่มต้น
+              options += '<option value="sum">- - เลือกอำเภอ - -</option>';
+              districtList.forEach(district => {
+                  options += `<option value="${district}">${district}</option>`;
+              });
+              select.value = ''; // ตั้งค่าเริ่มต้นเป็นว่างเปล่า
+          }
+
+          select.innerHTML = options; // เพิ่มตัวเลือกลงใน select
+          container.appendChild(select); // เพิ่ม select ลงใน container
+
+          // ตรวจสอบว่าเคยเลือกอำเภอมาก่อนหรือไม่ (เช่นจากการรีเฟรชหน้าเว็บ)
+          if (sessionStorage.getItem("selectedDistrict")) {
+              select.value = sessionStorage.getItem("selectedDistrict");
+          }
+
+          // บันทึกค่าอำเภอที่เลือกไว้ใน sessionStorage
+          select.addEventListener("change", function() {
+              sessionStorage.setItem("selectedDistrict", select.value);
+          });
+      }
+
+      window.addEventListener('resize', createSelect); // เรียกฟังก์ชันเมื่อเปลี่ยนขนาดหน้าจอ
+      window.addEventListener('DOMContentLoaded', createSelect); // เรียกฟังก์ชันเมื่อโหลดหน้าเว็บ
+
     </script>
 
   
