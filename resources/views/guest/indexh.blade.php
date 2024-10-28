@@ -8,9 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Mitr|Prompt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('fonts/feather/feather.css')}}"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/form/themify-icons.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/form/icofont.css')}}"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/datatables.bootstrap4.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/buttons.datatables.min.css')}}">
@@ -25,7 +22,6 @@
     <!-- leaflet -->
     
     <link rel="stylesheet" href="{{ asset('css/form/leaflet.css')}}" crossorigin=""/>
-    <!-- <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script> -->
     <script src="{{ asset('js/leaflet-omnivore.min.js')}}"  crossorigin=""></script>
     <script src="{{ asset('js/leaflet-src.js')}}"  crossorigin=""></script>
 
@@ -137,11 +133,11 @@
                                 </ul>
                               </div>
                               <!-- Map Show -->
-                              <div class="card-block p-b-0">
+                              <!-- <div class="card-block p-b-0">
                                 <div id="map"></div>
                                 <br>
                                 <center><img  src="{{ asset('images/icon/refmap1.png') }}" width=85% ></center>
-                              </div>
+                              </div> -->
                                <!-- End Map show -->
                                                           
                             </div>
@@ -371,7 +367,7 @@
       var borders= new L.LayerGroup();
       var x = 18.290015 ; 
       var y = 99.656525;
-      var mbAttr = 'Mae Jang Basin ',
+      var mbAttr = 'Lampang Thailand',
           mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFucGFueWEiLCJhIjoiY2loZWl5ZnJ4MGxnNHRwbHp5bmY4ZnNxOCJ9.IooQB0jYS_4QZvIq7gkjeQ';
           osm = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
               maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
