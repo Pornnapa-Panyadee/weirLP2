@@ -252,7 +252,7 @@
                                         </tr>
                                       </thead>
                                       <tbody>     
-                                      <?php for($i = 0;$i < 100;$i++){  ?>
+                                      <?php for($i = 0;$i < count($data); $i++){  ?>
                                         <tr>
                                           <td align="center">{{$i+1}} </td>
                                           <td><a href='{{ asset('/report/pdf') }}/{{$data[$i]['weir_code']}}' target="_blank"> {{$data[$i]['weir_code']}} </a></td>
@@ -265,14 +265,11 @@
                                             <a href='{{ asset('/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-dropbox" target="_blank"><i class="feather icon-eye"></i>แบบสำรวจ</a>
                                             <a href='{{ asset('/photo') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
                                             <a href='{{ asset('/map') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>แผนที่</a>
-                                            
                                           </td>
                                         </tr>
                                       <?php }?>
-                                        
                                       </tbody>
                                     </table>
-                                    
                                   </div>
                                 </div>    
                             </div>

@@ -3,8 +3,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8">
     <title>Lampang Weir </title>
-    
-    <link rel="apple-touch-icon" ref="{{ asset('images/icon/favicon1.ico')}}" type="image/x-icon">
+
     <link rel="icon" href="{{ asset('images/icon/favicon1.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Mitr|Prompt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
@@ -128,27 +127,20 @@
                           <div class="card table-card">
                             <div class="card-header">
                               <h5>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝายและการบริหารจัดการพื้นที่เสี่ยงภัยแล้งและน้ำท่วมในจังหวัดลำปาง</h5>
-                              <br>โดย องค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่
-                              <div class="card-header-right">
-                                <ul class="list-unstyled card-option">
-                                  <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                                  <li><i class="feather icon-maximize full-card" title="ขยายแผนที่"></i></li>
-                                  <li><i class="feather icon-refresh-cw reload-card" title="Reload แผนที่"></i></li>
-                                  <li><i class="feather icon-chevron-left open-card-option"></i> </li>
-                                </ul>
-                              </div>
+                              <br>โดย องค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่                            
+                              
                               <!-- Map Show -->
                               <div class="card-block p-b-0">
                                 <div id="map"></div>
                                 <br>
                                 <center><img  src="{{ asset('images/icon/refmap1.png') }}" width=85% ></center>
                               </div>
-                               <!-- End Map show -->
-                                                          
+                               <!-- End Map show --> 
                             </div>
                           </div>
                         </div>
                       </div>
+
                       <!-- banner -->
                       <div class="card">
                         <div class="card-block">
@@ -195,8 +187,7 @@
                               </div>
                         </div>
                       </div>
-                      
-                       <!-- table -->
+                      <!-- table -->
                       <div class="card">
                         <div class="card-block">
                           <div class="row">
@@ -261,7 +252,7 @@
                                         </tr>
                                       </thead>
                                       <tbody>     
-                                      <?php for($i = 0;$i < count($data);$i++){  ?>
+                                      <?php for($i = 0;$i < count($data); $i++){  ?>
                                         <tr>
                                           <td align="center">{{$i+1}} </td>
                                           <td><a href='{{ asset('/report/pdf') }}/{{$data[$i]['weir_code']}}' target="_blank"> {{$data[$i]['weir_code']}} </a></td>
@@ -274,14 +265,11 @@
                                             <a href='{{ asset('/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-dropbox" target="_blank"><i class="feather icon-eye"></i>แบบสำรวจ</a>
                                             <a href='{{ asset('/photo') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
                                             <a href='{{ asset('/map') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>แผนที่</a>
-                                            
                                           </td>
                                         </tr>
                                       <?php }?>
-                                        
                                       </tbody>
                                     </table>
-                                    
                                   </div>
                                 </div>    
                             </div>
@@ -342,7 +330,6 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" ></script>
   
     <script src="{{ asset('js/form/rocket-loader.min.js')}}" data-cf-settings="ce2668daaac54a74e9f6cdff-|49" defer=""></script>
-
     
     <!-- Map script -->
     <link rel="stylesheet" href="{{ asset('css/L.Control.Layers.Tree.css')}}" crossorigin=""/>
