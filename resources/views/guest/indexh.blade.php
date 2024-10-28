@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <title>Lampang Weir </title>
     
- 
+    <link rel="apple-touch-icon" ref="{{ asset('images/icon/favicon1.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/icon/favicon1.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Mitr|Prompt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('fonts/feather/feather.css')}}"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/form/themify-icons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/form/icofont.css')}}"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/datatables.bootstrap4.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form/buttons.datatables.min.css')}}">
@@ -22,6 +26,7 @@
     <!-- leaflet -->
     
     <link rel="stylesheet" href="{{ asset('css/form/leaflet.css')}}" crossorigin=""/>
+    <!-- <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script> -->
     <script src="{{ asset('js/leaflet-omnivore.min.js')}}"  crossorigin=""></script>
     <script src="{{ asset('js/leaflet-src.js')}}"  crossorigin=""></script>
 
@@ -112,189 +117,7 @@
           <div class="pcoded-wrapper">
              @include('menu.slidebar')
             <!-- Map -->
-            <div class="pcoded-content">
-              <div class="card"><h3></h3></div>
-              <div class="pcoded-inner-content">
-                <div class="main-body">
-                  <div class="page-wrapper">
-                    <div class="page-body">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="card table-card">
-                            <div class="card-header">
-                              <h5>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝายและการบริหารจัดการพื้นที่เสี่ยงภัยแล้งและน้ำท่วมในจังหวัดลำปาง</h5>
-                              <br>โดย องค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่
-                              <div class="card-header-right">
-                                <ul class="list-unstyled card-option">
-                                  <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                                  <li><i class="feather icon-maximize full-card" title="ขยายแผนที่"></i></li>
-                                  <li><i class="feather icon-refresh-cw reload-card" title="Reload แผนที่"></i></li>
-                                  <li><i class="feather icon-chevron-left open-card-option"></i> </li>
-                                </ul>
-                              </div>
-                              <!-- Map Show -->
-                              <!-- <div class="card-block p-b-0">
-                                <div id="map"></div>
-                                <br>
-                                <center><img  src="{{ asset('images/icon/refmap1.png') }}" width=85% ></center>
-                              </div> -->
-                               <!-- End Map show -->
-                                                          
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- banner -->
-                      <div class="card">
-                        <div class="card-block">
-                          <div class="row">
-                            <div class="col-lg-12 col-xl-12">
-                              <div class="sub-title"><h4>ข้อมูลการตรวจสอบประเมินสภาพฝาย</h4> </div>
-                            </div>
-                          </div>
-                              <div class="card-block p-b-0">
-                                <div class="row justify-content-md-center">
-                                  <div class="col-3 col-md-6 col-lg-3">
-                                    <a href="{{ asset('/report/map') }}" target="_blank">
-                                      <button class="btn">
-                                        <center><img src="{{ asset('images/banner/map.png') }}" width=100% /> </center>
-                                      </button>
-                                    </a>
-                                    <!-- <center><img  src="{{ asset('images/banner/map.png') }}" width=100% ></center> -->
-                                  </div>
-                                  <div class="col-3 col-md-6 col-lg-3">
-                                    <a href="{{ asset('report/chart?amp=sum') }}" target="_blank">
-                                      <button class="btn">
-                                        <center><img src="{{ asset('images/banner/graph.png') }}" width=100% /> </center>
-                                      </button>
-                                    </a>
-                                    <!-- <center><img  src="{{ asset('images/banner/graph.png') }}" width=100% ></center> -->
-                                  </div>
-                                  <div class="col-3 col-md-6 col-lg-3">
-                                    <a href="{{ asset('report/scoreComposition') }}" target="_blank">
-                                      <button class="btn">
-                                        <center><img src="{{ asset('images/banner/table.png') }}" width=100% /> </center>
-                                      </button>
-                                    </a>
-                                    <!-- <center><img  src="{{ asset('images/banner/table.png') }}" width=100% ></center> -->
-                                  </div>
-                                  <div class="col-3 col-md-6 col-lg-3">
-                                    <a href="{{ asset('/report/problem') }}" target="_blank">
-                                      <button class="btn">
-                                        <center><img src="{{ asset('images/banner/report.png') }}" width=100% /> </center>
-                                      </button>
-                                    </a>
-                                    <!-- <center><img  src="{{ asset('images/banner/report.png') }}" width=100% ></center> -->
-                                  </div>
-                                </div>                               
-                              </div>
-                        </div>
-                      </div>
-                      
-                       <!-- table -->
-                      <div class="card">
-                        <div class="card-block">
-                          <div class="row">
-                            <div class="col-lg-12 col-xl-12">
-                              <div class="sub-title"><h4>ตารางแสดงรายละเอียดการตรวจสอบฝาย</h4> </div>
-                              <!-- choose Amp -->
-                                <!-- <form id="amp" name="amp" action="/weir/lampang/#tableData" method="get">  -->
-                                <form id="amp" name="amp" action="#tableData" method="get"> 
-                                <div class="find">
-                                  <div class="row justify-content-center" >
-                                    <div class="col-md-8 col-xl-6"></div>
-                                    <div class="col-md-8 col-xl-2">
-                                      <h5 class="card-title">
-                                          <select id='weir_district' name='amp' id="name">
-                                                <option value="sum">- - เลือกอำเภอ - -</option>
-                                                <option value="ห้างฉัตร">ห้างฉัตร</option>
-                                                <option value="เกาะคา">เกาะคา</option>
-                                                <option value="สบปราบ">สบปราบ</option>
-                                                <option value="เถิน">เถิน</option>
-                                                <option value="แจ้ห่ม">แจ้ห่ม</option>
-                                                <option value="งาว">งาว</option>
-                                                <option value="แม่เมาะ">แม่เมาะ</option>
-                                                <option value="แม่ทะ">แม่ทะ</option>
-                                                <option value="แม่พริก">แม่พริก</option>
-                                                <option value="เมืองปาน">เมืองปาน</option>
-                                                <option value="เมืองลำปาง">เมืองลำปาง</option>
-                                                <option value="วังเหนือ">วังเหนือ</option>
-                                                <option value="เสริมงาม">เสริมงาม</option>
-                                                
-                                          </select> 
-                                      </h5>
-                                    </div>
-                                    <div class="col-md-8 col-xl-2">
-                                      <h5 class="card-title">
-                                        <select id="weir_tumbol" name="tumbol" >
-                                            <option value=''>-- เลือกตำบล --</option>
-                                            </select>
-                                      </h5>
-                                    </div>
-                                    <div class="col-md-8 col-xl-1">
-                                      <button type="submit" class="btn btn-outline-dark "  style="float: right; padding:8px;"> ค้นหา </button>
-                                    </div>
-                                                                  
-                                  </div>
-                                </div>
-                                </form>
-                                <hr>
-                              <br>
-                                <!-- table -->
-                                <div id="tableData">
-                                  <div class="dt-responsive table-responsive">
-                                    <table id="fix-header" class="table table-striped table-bordered nowrap" width=80% align="center">
-                                      <thead>
-                                        <tr>
-                                          <th width=5%>#</th>
-                                          <th width=10%>รหัส</th>
-                                          <th width=20%>ชื่อฝาย/ลำน้ำ</th>
-                                          <th width=15%>หมู่บ้าน</th>
-                                          <th width=15%>ตำบล</th>
-                                          <th width=15%>อำเภอ</th>
-                                          <th></th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>     
-                                      <?php for($i = 0;$i < count($data);$i++){  ?>
-                                        <tr>
-                                          <td align="center">{{$i+1}} </td>
-                                          <td><a href='{{ asset('/report/pdf') }}/{{$data[$i]['weir_code']}}' target="_blank"> {{$data[$i]['weir_code']}} </a></td>
-                                          <td>{{$data[$i]['weir_name']}}/{{$data[$i]['river']}} </td>
-                                          <td>{{$data[$i]['weir_village']}}</td>
-                                          <td>{{$data[$i]['weir_tumbol']}}  </td>
-                                          <td>{{$data[$i]['weir_district']}}</td>
-                                          <td align="center" > 
-                                            <a href='{{ asset('/report/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-facebook" target="_blank"><i class="feather icon-sidebar"></i>รายงาน</a>
-                                            <a href='{{ asset('/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-dropbox" target="_blank"><i class="feather icon-eye"></i>แบบสำรวจ</a>
-                                            <a href='{{ asset('/photo') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
-                                            <a href='{{ asset('/map') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>แผนที่</a>
-                                            
-                                          </td>
-                                        </tr>
-                                      <?php }?>
-                                        
-                                      </tbody>
-                                    </table>
-                                    
-                                  </div>
-                                </div>    
-                            </div>
-                                                                                    
-                          </div>
-                        </div>
-                      </div>
-                      <!-- table end -->
-                    </div>
-                  </div>
-
-                  
-                </div>
-              </div>
-
-             
-            </div>  
-          </div>
+          
             @include('menu.foot')
           </div>
           
@@ -367,7 +190,7 @@
       var borders= new L.LayerGroup();
       var x = 18.290015 ; 
       var y = 99.656525;
-      var mbAttr = 'Lampang Thailand',
+      var mbAttr = 'Lampang Thailand ',
           mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFucGFueWEiLCJhIjoiY2loZWl5ZnJ4MGxnNHRwbHp5bmY4ZnNxOCJ9.IooQB0jYS_4QZvIq7gkjeQ';
           osm = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
               maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
