@@ -32,22 +32,22 @@
     <style type="text/css">
       #map{
 
-        font-family: Mitr, sans-serif;
-        height: 760px;
-        display: block;
-              margin: auto;
-              text-align: left;
-              font-size: 14px;
-      }
-      #map.table {
-        font-family: 'Mitr', sans-serif;
-        width: 100%;
-      }#map.tr {
-        padding: 15px;
-        text-align: right;
-      }#map.td {
-        padding: 15px;
-        text-align: right;
+			  font-family: Mitr, sans-serif;
+			  height: 620px;
+			  display: block;
+        margin: auto;
+        text-align: left;
+        font-size: 14px;
+			}
+		  #map.table {
+		    font-family: 'Mitr', sans-serif;
+		    width: 100%;
+		  }#map.tr {
+		    padding: 15px;
+		    text-align: right;
+		  }#map.td {
+		    padding: 15px;
+		    text-align: right;
         }
         select{
             width: 100%;
@@ -84,11 +84,16 @@
       .btn{
         padding:2px 12px;
       }
-      .mapshow {
-        border: 6px solid;
-        border-color: #425b75;
+      @media screen and (max-width: 600px) {
+          div.find {
+            width: 80%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
       }
-
+     </style>
 
     </style>
 
@@ -121,29 +126,157 @@
                         <div class="col-md-12">
                           <div class="card table-card">
                             <div class="card-header">
-                              <h3>แผนที่แสดงตำแหน่งฝายจำแนกตามสภาพฝาย ในพื้นที่จังหวัดลำปาง</h3>                              
+                              <h5>โครงการพัฒนาระบบสารสนเทศการตรวจประเมินสภาพฝายและการบริหารจัดการพื้นที่เสี่ยงภัยแล้งและน้ำท่วมในจังหวัดลำปาง</h5>
+                              <br>โดย องค์การบริหารส่วนจังหวัดลำปาง ร่วมกับมหาวิทยาลัยเชียงใหม่                            
                               
                               <!-- Map Show -->
                               <div class="card-block p-b-0">
-                                <div class="row justify-content-center">
-                                    <div class="col-xs-10 col-sm-10 col-md-10">
-                                      <h3><marquee direction="left" loop="1"> &#9873; กรุณา...รอโหลดข้อมูลสักครู่ !!! </marquee></h3>
-                                      
-                                        <div class="mapshow" id="map" style="width: 100%; " align="center"></div>
-                                        <br>
-                                        <div class="row justify-content-end"> 
-                                          <div class="col col-lg-6">
-                                              <img class="ref" src="{{ asset('/images/icon/refmap3.png') }}" align="right" width=100% >
-                                          </div>
-                                      </div>
-                                    </div>
-                                </div>
-                               
+                                <div id="map"></div>
+                                <br>
+                                <center><img  src="{{ asset('images/icon/refmap1.png') }}" width=85% ></center>
                               </div>
-
-                            
-                                         
+                               <!-- End Map show --> 
                             </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- banner -->
+                      <div class="card">
+                        <div class="card-block">
+                          <div class="row">
+                            <div class="col-lg-12 col-xl-12">
+                              <div class="sub-title"><h4>ข้อมูลการตรวจสอบประเมินสภาพฝาย</h4> </div>
+                            </div>
+                          </div>
+                              <div class="card-block p-b-0">
+                                <div class="row justify-content-md-center">
+                                  <div class="col-3 col-md-6 col-lg-3">
+                                    <a href="{{ asset('/report/map') }}" target="_blank">
+                                      <button class="btn">
+                                        <center><img src="{{ asset('images/banner/map.png') }}" width=100% /> </center>
+                                      </button>
+                                    </a>
+                                    <!-- <center><img  src="{{ asset('images/banner/map.png') }}" width=100% ></center> -->
+                                  </div>
+                                  <div class="col-3 col-md-6 col-lg-3">
+                                    <a href="{{ asset('report/chart?amp=sum') }}" target="_blank">
+                                      <button class="btn">
+                                        <center><img src="{{ asset('images/banner/graph.png') }}" width=100% /> </center>
+                                      </button>
+                                    </a>
+                                    <!-- <center><img  src="{{ asset('images/banner/graph.png') }}" width=100% ></center> -->
+                                  </div>
+                                  <div class="col-3 col-md-6 col-lg-3">
+                                    <a href="{{ asset('report/scoreComposition') }}" target="_blank">
+                                      <button class="btn">
+                                        <center><img src="{{ asset('images/banner/table.png') }}" width=100% /> </center>
+                                      </button>
+                                    </a>
+                                    <!-- <center><img  src="{{ asset('images/banner/table.png') }}" width=100% ></center> -->
+                                  </div>
+                                  <div class="col-3 col-md-6 col-lg-3">
+                                    <a href="{{ asset('/report/problem') }}" target="_blank">
+                                      <button class="btn">
+                                        <center><img src="{{ asset('images/banner/report.png') }}" width=100% /> </center>
+                                      </button>
+                                    </a>
+                                    <!-- <center><img  src="{{ asset('images/banner/report.png') }}" width=100% ></center> -->
+                                  </div>
+                                </div>                               
+                              </div>
+                        </div>
+                      </div>
+                      <!-- table -->
+                      <div class="card">
+                        <div class="card-block">
+                          <div class="row">
+                            <div class="col-lg-12 col-xl-12">
+                              <div class="sub-title"><h4>ตารางแสดงรายละเอียดการตรวจสอบฝาย</h4> </div>
+                              <!-- choose Amp -->
+                                <!-- <form id="amp" name="amp" action="/weir/lampang/#tableData" method="get">  -->
+                                <form id="amp" name="amp" action="#tableData" method="get"> 
+                                <div class="find">
+                                  <div class="row justify-content-center" >
+                                    <div class="col-md-8 col-xl-6"></div>
+                                    <div class="col-md-8 col-xl-2">
+                                      <h5 class="card-title">
+                                          <select id='weir_district' name='amp' id="name">
+                                                <option value="sum">- - เลือกอำเภอ - -</option>
+                                                <option value="ห้างฉัตร">ห้างฉัตร</option>
+                                                <option value="เกาะคา">เกาะคา</option>
+                                                <option value="สบปราบ">สบปราบ</option>
+                                                <option value="เถิน">เถิน</option>
+                                                <option value="แจ้ห่ม">แจ้ห่ม</option>
+                                                <option value="งาว">งาว</option>
+                                                <option value="แม่เมาะ">แม่เมาะ</option>
+                                                <option value="แม่ทะ">แม่ทะ</option>
+                                                <option value="แม่พริก">แม่พริก</option>
+                                                <option value="เมืองปาน">เมืองปาน</option>
+                                                <option value="เมืองลำปาง">เมืองลำปาง</option>
+                                                <option value="วังเหนือ">วังเหนือ</option>
+                                                <option value="เสริมงาม">เสริมงาม</option>
+                                                
+                                          </select> 
+                                      </h5>
+                                    </div>
+                                    <div class="col-md-8 col-xl-2">
+                                      <h5 class="card-title">
+                                        <select id="weir_tumbol" name="tumbol" >
+                                            <option value=''>-- เลือกตำบล --</option>
+                                            </select>
+                                      </h5>
+                                    </div>
+                                    <div class="col-md-8 col-xl-1">
+                                      <button type="submit" class="btn btn-outline-dark "  style="float: right; padding:8px;"> ค้นหา </button>
+                                    </div>
+                                                                  
+                                  </div>
+                                </div>
+                                </form>
+                                <hr>
+                              <br>
+                                <!-- table -->
+                                <div id="tableData">
+                                  <div class="dt-responsive table-responsive">
+                                    <table id="fix-header" class="table table-striped table-bordered nowrap" width=80% align="center">
+                                      <thead>
+                                        <tr>
+                                          <th width=5%>#</th>
+                                          <th width=10%>รหัส</th>
+                                          <th width=20%>ชื่อฝาย/ลำน้ำ</th>
+                                          <th width=15%>หมู่บ้าน</th>
+                                          <th width=15%>ตำบล</th>
+                                          <th width=15%>อำเภอ</th>
+                                          <th></th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>     
+                                      <?php for($i = 0;$i < count($data);$i++){  ?>
+                                        <tr>
+                                          <td align="center">{{$i+1}} </td>
+                                          <td><a href='{{ asset('/report/pdf') }}/{{$data[$i]['weir_code']}}' target="_blank"> {{$data[$i]['weir_code']}} </a></td>
+                                          <td>{{$data[$i]['weir_name']}}/{{$data[$i]['river']}} </td>
+                                          <td>{{$data[$i]['weir_village']}}</td>
+                                          <td>{{$data[$i]['weir_tumbol']}}  </td>
+                                          <td>{{$data[$i]['weir_district']}}</td>
+                                          <td align="center" > 
+                                            <a href='{{ asset('/report/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-facebook" target="_blank"><i class="feather icon-sidebar"></i>รายงาน</a>
+                                            <a href='{{ asset('/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-dropbox" target="_blank"><i class="feather icon-eye"></i>แบบสำรวจ</a>
+                                            <a href='{{ asset('/photo') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
+                                            <a href='{{ asset('/map') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>แผนที่</a>
+                                            
+                                          </td>
+                                        </tr>
+                                      <?php }?>
+                                        
+                                      </tbody>
+                                    </table>
+                                    
+                                  </div>
+                                </div>    
+                            </div>
+                                                                                    
                           </div>
                         </div>
                       </div>
