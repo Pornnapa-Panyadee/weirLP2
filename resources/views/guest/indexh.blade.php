@@ -251,6 +251,26 @@
                                           <th></th>
                                         </tr>
                                       </thead>
+                                      <tbody>     
+                                      <?php for($i = 0;$i < 100;$i++){  ?>
+                                        <tr>
+                                          <td align="center">{{$i+1}} </td>
+                                          <td><a href='{{ asset('/report/pdf') }}/{{$data[$i]['weir_code']}}' target="_blank"> {{$data[$i]['weir_code']}} </a></td>
+                                          <td>{{$data[$i]['weir_name']}}/{{$data[$i]['river']}} </td>
+                                          <td>{{$data[$i]['weir_village']}}</td>
+                                          <td>{{$data[$i]['weir_tumbol']}}  </td>
+                                          <td>{{$data[$i]['weir_district']}}</td>
+                                          <td align="center" > 
+                                            <a href='{{ asset('/report/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-facebook" target="_blank"><i class="feather icon-sidebar"></i>รายงาน</a>
+                                            <a href='{{ asset('/pdf') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-dropbox" target="_blank"><i class="feather icon-eye"></i>แบบสำรวจ</a>
+                                            <a href='{{ asset('/photo') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-linkedin" target="_blank"><i class="feather icon-image"></i>ภาพประกอบ</a>
+                                            <a href='{{ asset('/map') }}/{{$data[$i]['weir_code']}}' class="btn waves-effect waves-light btn-instagram" target="_blank"><i class="feather icon-map-pin"></i>แผนที่</a>
+                                            
+                                          </td>
+                                        </tr>
+                                      <?php }?>
+                                        
+                                      </tbody>
                                     </table>
                                     
                                   </div>
@@ -290,10 +310,10 @@
     <script src="{{ asset('js/form/script.js')}}"></script>
     <script async  src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     
-    <script src="{{ asset('js/chooselocationHome.js')}}"></script>
+    <script src= "{{ asset('js/chooselocationReport.js') }}"></script>
     <script src="{{ asset('js/form/rocket-loader.min.js')}}"></script>
   
-    <script src="{{ asset('js/form/jquery.datatables2.min.js')}}" ></script>
+    <script src="{{ asset('js/form/jquery.datatables.min.js')}}" ></script>
     <script src="{{ asset('js/form/datatables.buttons.min.js')}}" ></script>
 
     <script src="{{ asset('js/form/datatables.fixedheader.min.js')}}"></script>
@@ -313,7 +333,6 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" ></script>
   
     <script src="{{ asset('js/form/rocket-loader.min.js')}}" data-cf-settings="ce2668daaac54a74e9f6cdff-|49" defer=""></script>
-
     
     <!-- Map script -->
     <link rel="stylesheet" href="{{ asset('css/L.Control.Layers.Tree.css')}}" crossorigin=""/>
