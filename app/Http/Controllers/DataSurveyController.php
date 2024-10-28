@@ -319,6 +319,15 @@ class DataSurveyController extends Controller
     public function getDataHomeTabletesth(Request $request) {
         $data=[];
         $dataUser=[];
+        // dd($request->amp);
+        if($request->amp=="ห้างฉัตร" || empty($request->amp)){
+            $request->amp="ห้างฉัตร";
+        }elseif($request->amp=="sum"){
+            $request->amp=empty($request->amp);
+        }else{
+            $request->amp=empty($request->amp);
+        }
+        
         if(!empty($request->amp)){
             if(!empty($request->tumbol)){
                 $location = WeirLocation::select('*')->where('weir_district',$request->amp)->where('weir_tumbol',$request->tumbol)->get();
@@ -393,7 +402,11 @@ class DataSurveyController extends Controller
         // dd($data);
         $district['name']=Location::getprovinceDistrict();
         // dd($district);
-        return view('guest.indexh',compact('data','district'));      
+        if($request->amp=="sum"){
+            $amp="ทั้งหมด";
+        }else{$amp=$request->amp;}
+        
+        return view('guest.indexh',compact('data','district','amp'));      
         
         
     }

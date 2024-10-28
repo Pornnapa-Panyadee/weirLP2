@@ -202,7 +202,7 @@
                                     <div class="col-md-8 col-xl-2">
                                       <h5 class="card-title">
                                           <select id='weir_district' name='amp' id="name">
-                                                <option value="sum">- - เลือกอำเภอ - -</option>
+                                                <option value="ห้างฉัตร">{{$amp}}</option>
                                                 <option value="ห้างฉัตร">ห้างฉัตร</option>
                                                 <option value="เกาะคา">เกาะคา</option>
                                                 <option value="สบปราบ">สบปราบ</option>
@@ -216,6 +216,7 @@
                                                 <option value="เมืองลำปาง">เมืองลำปาง</option>
                                                 <option value="วังเหนือ">วังเหนือ</option>
                                                 <option value="เสริมงาม">เสริมงาม</option>
+                                                <option value="sum">ทั้งหมด</option>
                                                 
                                           </select> 
                                       </h5>
