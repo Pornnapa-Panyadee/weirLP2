@@ -268,16 +268,26 @@
       var station3 = new L.LayerGroup();var station4 = new L.LayerGroup();
       var station5 = new L.LayerGroup();var station6 = new L.LayerGroup();
       var station7 = new L.LayerGroup();var station8 = new L.LayerGroup();
+      var station9 = new L.LayerGroup();var station10 = new L.LayerGroup();
+      var station11 = new L.LayerGroup();var station12 = new L.LayerGroup();
+      var station13 = new L.LayerGroup();
 
       var station19 = new L.LayerGroup();var station20 = new L.LayerGroup();
       var station21 = new L.LayerGroup();var station22 = new L.LayerGroup();
       var station23 = new L.LayerGroup();var station24 = new L.LayerGroup();
       var station25 = new L.LayerGroup();var station26 = new L.LayerGroup();
+      var station27 = new L.LayerGroup();var station28 = new L.LayerGroup();
+      var station29 = new L.LayerGroup();var station30 = new L.LayerGroup();
+      var station31 = new L.LayerGroup();
 
       var station37 = new L.LayerGroup();var station38 = new L.LayerGroup();
       var station39 = new L.LayerGroup();var station40 = new L.LayerGroup();
       var station41 = new L.LayerGroup();var station42 = new L.LayerGroup();
       var station43 = new L.LayerGroup();var station44 = new L.LayerGroup();
+      var station45 = new L.LayerGroup();var station46 = new L.LayerGroup();
+      var station47 = new L.LayerGroup();var station48 = new L.LayerGroup();
+      var station49 = new L.LayerGroup();
+
 
       var rid = new L.LayerGroup();
       var ridNo = new L.LayerGroup();
@@ -288,7 +298,7 @@
       var x = 18.330015 ; 
       var y = 99.656525;
 
-      var mbAttr = 'Mae Jang Basin ',
+      var mbAttr = 'Lampang ',
           mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFucGFueWEiLCJhIjoiY2loZWl5ZnJ4MGxnNHRwbHp5bmY4ZnNxOCJ9.IooQB0jYS_4QZvIq7gkjeQ';
           osm = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
               maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3'], attribution: mbAttr });
@@ -453,6 +463,11 @@
         addPin(station6,5,"1",mo);
         addPin(station7,6,"1",mo);
         addPin(station8,7,"1",mo);
+        addPin(station9,8,"1",mo);
+        addPin(station10,9,"1",mo);
+        addPin(station11,10,"1",mo);
+        addPin(station12,11,"1",mo);
+        addPin(station13,12,"1",mo);
 
         addPin(station19,0,"2",mo);
         addPin(station20,1,"2",mo);
@@ -462,6 +477,11 @@
         addPin(station24,5,"2",mo);
         addPin(station25,6,"2",mo);
         addPin(station26,7,"2",mo);
+        addPin(station27,8,"1",mo);
+        addPin(station28,9,"1",mo);
+        addPin(station29,10,"1",mo);
+        addPin(station30,11,"1",mo);
+        addPin(station31,12,"1",mo);
 
         addPin(station37,0,"3",mo);
         addPin(station38,1,"3",mo);
@@ -471,6 +491,11 @@
         addPin(station42,5,"3",mo);
         addPin(station43,6,"3",mo);
         addPin(station44,7,"3",mo);
+        addPin(station45,8,"1",mo);
+        addPin(station46,9,"1",mo);
+        addPin(station47,10,"1",mo);
+        addPin(station48,11,"1",mo);
+        addPin(station49,12,"1",mo);
       
 
       
@@ -502,6 +527,11 @@
                 { label:" "+amp[5],layer: station6},
                 { label:" "+amp[6],layer: station7},
                 { label:" "+amp[7],layer: station8},
+                { label:" "+amp[8],layer: station9},
+                { label:" "+amp[9],layer: station10},
+                { label:" "+amp[10],layer: station11},
+                { label:" "+amp[11],layer: station12},
+                { label:" "+amp[12],layer: station13},
           ]
         },
         {
@@ -516,6 +546,11 @@
                 { label:" "+amp[5],layer: station24},
                 { label:" "+amp[6],layer: station25},
                 { label:" "+amp[7],layer: station26},
+                { label:" "+amp[8],layer: station27},
+                { label:" "+amp[9],layer: station28},
+                { label:" "+amp[10],layer: station29},
+                { label:" "+amp[11],layer: station30},
+                { label:" "+amp[12],layer: station31},
           ]
         },
         {
@@ -530,12 +565,18 @@
                 { label:" "+amp[5],layer: station42},
                 { label:" "+amp[6],layer: station43},
                 { label:" "+amp[7],layer: station44},
+                { label:" "+amp[8],layer: station45},
+                { label:" "+amp[9],layer: station46},
+                { label:" "+amp[10],layer: station47},
+                { label:" "+amp[11],layer: station48},
+                { label:" "+amp[12],layer: station49},
           ]
         }
       ];
       
       var map = L.map('map', {
-          layers: [osm,station1,station2,station3,station4,station5,station6,station7,station8,station19,station20,station21,station22,station23,station24,station25,station26,station37,station38,station39,station40,station41,station42,station43,station44,borders],
+          layers: [osm,station1,station2,station3,station4,station5,station6,station7,station8,station9,station10,station11,station12,station13,station19,station20,station21,station22,station23,station24,station25,station26,station27,station28,station29,station30,station31,
+                  station37,station38,station39,station40,station41,station42,station43,station44,station45,station46,station47,station48,station49,borders],
           center: [x,y],
           zoom: 9,
         });
