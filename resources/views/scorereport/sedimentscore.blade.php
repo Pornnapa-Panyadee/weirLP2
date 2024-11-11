@@ -476,11 +476,11 @@
         addPin(station24,5,"2",mo);
         addPin(station25,6,"2",mo);
         addPin(station26,7,"2",mo);
-        addPin(station27,8,"1",mo);
-        addPin(station28,9,"1",mo);
-        addPin(station29,10,"1",mo);
-        addPin(station30,11,"1",mo);
-        addPin(station31,12,"1",mo);
+        addPin(station27,8,"2",mo);
+        addPin(station28,9,"2",mo);
+        addPin(station29,10,"2",mo);
+        addPin(station30,11,"2",mo);
+        addPin(station31,12,"2",mo);
 
         addPin(station37,0,"3",mo);
         addPin(station38,1,"3",mo);
@@ -490,11 +490,11 @@
         addPin(station42,5,"3",mo);
         addPin(station43,6,"3",mo);
         addPin(station44,7,"3",mo);
-        addPin(station45,8,"1",mo);
-        addPin(station46,9,"1",mo);
-        addPin(station47,10,"1",mo);
-        addPin(station48,11,"1",mo);
-        addPin(station49,12,"1",mo);
+        addPin(station45,8,"3",mo);
+        addPin(station46,9,"3",mo);
+        addPin(station47,10,"3",mo);
+        addPin(station48,11,"3",mo);
+        addPin(station49,12,"3",mo);
 
 
       var baseTree = {
