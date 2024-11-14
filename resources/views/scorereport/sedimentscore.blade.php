@@ -380,13 +380,13 @@
                   text1 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 > ฝาย : "+ data[i].weir_name+ " (ลำน้ำ : "+ data[i].river+")</font><br>";
                   text2 ="<font style=\"font-family: 'Mitr';\" size=\"2\"COLOR=#466DF3 >ที่ตั้ง : "+ data[i].weir_village +" ต."+ data[i].weir_tumbol +" อ."+ data[i].weir_district +"</font><br>";
                   text3 ="<br><table align=\"center\"><tr><td >" + "<a href='{{ asset('report/pdf') }}/"+data[i].weir_code+"' target=\"_blank\"><button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-sidebar\"></i> รายงาน</button> </a></td> <td> <a href='{{ asset('/pdf') }}/"+data[i].weir_code+"' target=\"_blank\">  "+"<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-eye\"></i> แบบสำรวจ</button> </a>" +"</td><td > <a href='{{ asset('/photo') }}/"+data[i].weir_code+"' target=\"_blank\">  " + "<button class=\"btn btn-primary btn-sm waves-effect waves-light\"><i class=\"feather icon-image\"></i> ภาพประกอบ</button> </a></td></tr></table>";
-              if(c=="2"){
+              if(c=="3"){
                 if(mo==0){
                     L.marker([x,y],{icon: pinMO_Y}).addTo(ampName).bindPopup(text+text1+text2+text3);  
                 }else{
                     L.marker([x,y],{icon: pin_Y}).addTo(ampName).bindPopup(text+text1+text2+text3);  
                 }
-              }else if(c=="3"){
+              }else if(c=="4"){
                 if(mo==0){
                     L.marker([x,y],{icon: pinMO_O}).addTo(ampName).bindPopup(text+text1+text2+text3);  
                 }else{
@@ -453,47 +453,47 @@
         mo=1;
       }
         
-        addPin(station1,0,"1",mo);
-        addPin(station2,1,"1",mo);
-        addPin(station3,2,"1",mo);
-        addPin(station4,3,"1",mo);
-        addPin(station5,4,"1",mo);
-        addPin(station6,5,"1",mo);
-        addPin(station7,6,"1",mo);
-        addPin(station8,7,"1",mo);
-        addPin(station9,8,"1",mo);
-        addPin(station10,9,"1",mo);
-        addPin(station11,10,"1",mo);
-        addPin(station12,11,"1",mo);
-        addPin(station13,12,"1",mo);
+        addPin(station1,0,"2",mo);
+        addPin(station2,1,"2",mo);
+        addPin(station3,2,"2",mo);
+        addPin(station4,3,"2",mo);
+        addPin(station5,4,"2",mo);
+        addPin(station6,5,"2",mo);
+        addPin(station7,6,"2",mo);
+        addPin(station8,7,"2",mo);
+        addPin(station9,8,"2",mo);
+        addPin(station10,9,"2",mo);
+        addPin(station11,10,"2",mo);
+        addPin(station12,11,"2",mo);
+        addPin(station13,12,"2",mo);
 
-        addPin(station19,0,"2",mo);
-        addPin(station20,1,"2",mo);
-        addPin(station21,2,"2",mo);
-        addPin(station22,3,"2",mo);
-        addPin(station23,4,"2",mo);
-        addPin(station24,5,"2",mo);
-        addPin(station25,6,"2",mo);
-        addPin(station26,7,"2",mo);
-        addPin(station27,8,"2",mo);
-        addPin(station28,9,"2",mo);
-        addPin(station29,10,"2",mo);
-        addPin(station30,11,"2",mo);
-        addPin(station31,12,"2",mo);
+        addPin(station19,0,"3",mo);
+        addPin(station20,1,"3",mo);
+        addPin(station21,2,"3",mo);
+        addPin(station22,3,"3",mo);
+        addPin(station23,4,"3",mo);
+        addPin(station24,5,"3",mo);
+        addPin(station25,6,"3",mo);
+        addPin(station26,7,"3",mo);
+        addPin(station27,8,"3",mo);
+        addPin(station28,9,"3",mo);
+        addPin(station29,10,"3",mo);
+        addPin(station30,11,"3",mo);
+        addPin(station31,12,"3",mo);
 
-        addPin(station37,0,"3",mo);
-        addPin(station38,1,"3",mo);
-        addPin(station39,2,"3",mo);
-        addPin(station40,3,"3",mo);
-        addPin(station41,4,"3",mo);
-        addPin(station42,5,"3",mo);
-        addPin(station43,6,"3",mo);
-        addPin(station44,7,"3",mo);
-        addPin(station45,8,"3",mo);
-        addPin(station46,9,"3",mo);
-        addPin(station47,10,"3",mo);
-        addPin(station48,11,"3",mo);
-        addPin(station49,12,"3",mo);
+        addPin(station37,0,"4",mo);
+        addPin(station38,1,"4",mo);
+        addPin(station39,2,"4",mo);
+        addPin(station40,3,"4",mo);
+        addPin(station41,4,"4",mo);
+        addPin(station42,5,"4",mo);
+        addPin(station43,6,"4",mo);
+        addPin(station44,7,"4",mo);
+        addPin(station45,8,"4",mo);
+        addPin(station46,9,"4",mo);
+        addPin(station47,10,"4",mo);
+        addPin(station48,11,"4",mo);
+        addPin(station49,12,"4",mo);
 
 
       var baseTree = {
