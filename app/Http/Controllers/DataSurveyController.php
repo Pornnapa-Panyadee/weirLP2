@@ -238,21 +238,21 @@ class DataSurveyController extends Controller
         $data=[];
         $dataUser=[];
         $screenWidth = $this->calculateScreenWidth();
-        if($screenWidth<= 768){
-            if($request->amp=="ห้างฉัตร" || empty($request->amp)){
-                $request->amp="ห้างฉัตร";
-            }elseif($request->amp=="sum"){
-                $request->amp=empty($request->amp);
-            }else{
-                $request->amp=$request->amp;
-            }
-        }else{
-            if($request->amp=="sum" || empty($request->amp)){
-                $request->amp=NULL;
-            }else{
-                $request->amp=$request->amp;
-            }
-        }
+        // if($screenWidth<= 768){
+        //     if($request->amp=="ห้างฉัตร" || empty($request->amp)){
+        //         $request->amp="ห้างฉัตร";
+        //     }elseif($request->amp=="sum"){
+        //         $request->amp=empty($request->amp);
+        //     }else{
+        //         $request->amp=$request->amp;
+        //     }
+        // }else{
+        //     if($request->amp=="sum" || empty($request->amp)){
+        //         $request->amp=NULL;
+        //     }else{
+        //         $request->amp=$request->amp;
+        //     }
+        // }
         if(!empty($request->amp)){
             if(!empty($request->tumbol)){
                 $location = WeirLocation::select('*')->where('weir_district',$request->amp)->where('weir_tumbol',$request->tumbol)->get();
