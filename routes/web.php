@@ -120,12 +120,14 @@ Route::get('/project/{id} ', 'App\Http\Controllers\ProjectCaseController@case');
 
 
 
-///// admin
-Route::get('/admin/list', 'App\Http\Controllers\UsersController@getUser')->name('admin.list');
-Route::get('/admin/register', function () {return view('admin.register');});
-Route::get('/admin/edit/{id}', 'App\Http\Controllers\UsersController@getdetailUser');
-Route::get('/admin/delete/{id}', 'App\Http\Controllers\UsersController@deleteUser');
-Route::post('/admin/update', 'App\Http\Controllers\UsersController@updateUser')->name('users.updatedata');
+///// admin - Only admin users can access
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/list', 'App\Http\Controllers\UsersController@getUser')->name('admin.list');
+    Route::get('/admin/register', function () {return view('admin.register');});
+    Route::get('/admin/edit/{id}', 'App\Http\Controllers\UsersController@getdetailUser');
+    Route::get('/admin/delete/{id}', 'App\Http\Controllers\UsersController@deleteUser');
+    Route::post('/admin/update', 'App\Http\Controllers\UsersController@updateUser')->name('users.updatedata');
+});
 
 
 // test
