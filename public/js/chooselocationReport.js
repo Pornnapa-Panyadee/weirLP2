@@ -132,38 +132,15 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function () {
-  // District Change
-
-  $('#weir_district').change(function () {
-    let id = $('#weir_district').val();
-    //console.log(id)
-    District(id, "0");
-
-  });
-
+$(document).on('change', '#weir_district', function () {
+  let id = $(this).val();
+  District(id, "0");
 });
 
-
-$(document).ready(function () {
-
-  $('#weir_district').change(function () {
-    var dis = $('#weir_district').val();
-    // Tombol Change
-    $('#weir_tumbol').change(function () {
-
-      // Tombol name
-      var id = $(this).val();
-      // alert(dis);
-      //alert(id2);
-      Tumbol(dis, id, "0");
-
-
-    });
-
-  });
-
-
+$(document).on('change', '#weir_tumbol', function () {
+  var dis = $('#weir_district').val();
+  var id = $(this).val();
+  Tumbol(dis, id, "0");
 });
 
 
