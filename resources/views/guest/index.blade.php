@@ -504,6 +504,7 @@
           const select = document.createElement('select');
           select.id = 'weir_district';
           select.name = 'amp';
+          select.classList.add('form-control');
 
           // รายการอำเภอทั้งหมด
           const districtList = [
@@ -512,30 +513,25 @@
               "เมืองลำปาง", "วังเหนือ", "เสริมงาม"
           ];
 
-          let options = '';
+          let options = '<option value="">- - เลือกอำเภอ - -</option>';
 
-          // เช็คว่าถ้าเป็นมือถือให้แสดงรายการอำเภอทั้งหมดโดยเลือก 'ห้างฉัตร' เป็นค่าเริ่มต้น
+          districtList.forEach(district => {
+              options += `<option value="${district}">${district}</option>`;
+          });
+
           if (isMobile) {
-              districtList.forEach(district => {
-                  options += `<option value="${district}">${district}</option>`;
-              });
               options += '<option value="sum">ทั้งหมด</option>';
-              select.value = 'ห้างฉัตร'; // ตั้งค่าเริ่มต้นเป็น "ห้างฉัตร"
-          } else {
-              // ถ้าไม่ใช่มือถือให้มีค่า "- - เลือกอำเภอ - -" เป็นค่าเริ่มต้น
-              options += '<option value="sum">- - เลือกอำเภอ - -</option>';
-              districtList.forEach(district => {
-                  options += `<option value="${district}">${district}</option>`;
-              });
-              select.value = ''; // ตั้งค่าเริ่มต้นเป็นว่างเปล่า
           }
 
           select.innerHTML = options; // เพิ่มตัวเลือกลงใน select
           container.appendChild(select); // เพิ่ม select ลงใน container
 
           // ตรวจสอบว่าเคยเลือกอำเภอมาก่อนหรือไม่ (เช่นจากการรีเฟรชหน้าเว็บ)
-          if (sessionStorage.getItem("selectedDistrict")) {
-              select.value = sessionStorage.getItem("selectedDistrict");
+          const saved = sessionStorage.getItem("selectedDistrict");
+          if (saved) {
+              select.value = saved;
+              // โหลดตำบลทันทีเมื่อมีค่าอำเภอเดิม
+              District(saved, "0");
           }
 
           // บันทึกค่าอำเภอที่เลือกไว้ใน sessionStorage
